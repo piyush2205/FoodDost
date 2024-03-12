@@ -1,0 +1,67 @@
+.modal {
+    /* display: none; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px) saturate(180%);
+  }
+
+  .modal-content {
+    margin:4%  auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 35%;
+    backdrop-filter: blur(5px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 12px;
+    border: 1px solid rgba(209, 213, 219, 0.3);
+  }
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .close:hover {
+    color: black;
+  }
+   
+  ::placeholder{
+    font-size: 16px;
+    font-weight: 600;
+    padding: 10px;
+  }
+
+  .cart-span{
+     font-weight: 700;
+     font-size: 11px;
+    transform: translate(5px, -19px);
+    -webkit-transform:  translate(5px, -19px);
+    -moz-transform:  translate(5px, -19px);
+    -ms-transform:  translate(5px, -19px);
+    -o-transform:  translate(5px, -19px);
+}
+.cart-svg{
+fill: transparent;
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 768px) {
+  .modal-content {
+      width: 70%; /* Adjust the width for smaller screens */
+  }
+  
+}
+
+@media only screen and (max-width: 480px) {
+  .modal-content {
+      width: 90%; /* Further adjust the width for even smaller screens */
+  }
+ 
+}

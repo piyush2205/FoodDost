@@ -1,0 +1,23 @@
+.main-container{
+display: flex;
+height: 200px;
+width: 1200px;
+overflow:hidden;
+flex-wrap:nowrap;
+margin: auto;
+gap: 18px;
+border: 1px solid red;
+
+}
+.inner-conatiner{
+    width:auto;
+    height: auto;
+   display: flex;
+   border: 1px solid red;
+}
+img{
+    width: 200px;
+    height: 200px;
+    object-fit:cover;
+}
+
