@@ -42,10 +42,11 @@ export const CartProvider = ({ children }) => {
         const savedPrice = localStorage.getItem('Price');
         return savedPrice ? JSON.parse(savedPrice) : 0;
     });
-
+    const [restaurantName, setRestaurantName] = useState("");
     const [quantities, setQuantities] = useState(() => JSON.parse(localStorage.getItem('cart')) || {});
     const [confirmationData, setConfirmationData] = useState({
         restaurantId: null,
+        restaurantName: null,
         itemId: null,
         quantity: null,
         price: 0,
@@ -55,6 +56,7 @@ export const CartProvider = ({ children }) => {
     const closeConfirmationModal = () => {
         setConfirmationData({
             restaurantId: null,
+            restaurantName: null,
             itemId: null,
             quantity: null,
             price: 0,
@@ -64,25 +66,28 @@ export const CartProvider = ({ children }) => {
 
     useEffect(() => {
         // Save cart data and current restaurant ID to local storage whenever they change
-        console.log('Updating local storage:', { TotalPrice, quantities, currentRestaurantId });
+        console.log('Updating local storage:', { TotalPrice, quantities, currentRestaurantId, restaurantName });
         localStorage.setItem('Price', JSON.stringify(TotalPrice));
+        localStorage.setItem('restaurantName', JSON.stringify(restaurantName));
         localStorage.setItem('cart', JSON.stringify(quantities));
         localStorage.setItem('currentRestaurantId', JSON.stringify(currentRestaurantId));
-    }, [quantities, currentRestaurantId, TotalPrice]);
+    }, [quantities, currentRestaurantId, TotalPrice, restaurantName]);
 
 
     const confirmAction = () => {
-        const { restaurantId, itemId, quantity, price, dishName } = confirmationData;
+        const { restaurantId, itemId, quantity, price, dishName, restaurantName } = confirmationData;
 
         if (currentRestaurantId && currentRestaurantId !== restaurantId && Object.keys(quantities).length > 0) {
             setQuantities({ [itemId]: { quantity, dishName, price } });
             setPrice(price * quantity);
             setCurrentRestaurantId(restaurantId);
+            setRestaurantName(restaurantName);
         } else {
             if (!currentRestaurantId) {
                 setCurrentRestaurantId(restaurantId);
-                setQuantities({ [itemId]: { quantity, dishName, price } });
+                setQuantities({ [itemId]: { quantity, dishName, price, restaurantName } });
                 setPrice(price * quantity);
+                setRestaurantName(restaurantName);
             } else {
                 setQuantities((prevQuantities) => ({
                     ...prevQuantities,
@@ -90,9 +95,11 @@ export const CartProvider = ({ children }) => {
                         quantity: (prevQuantities[itemId]?.quantity || 0) + quantity,
                         dishName: dishName,
                         price: prevQuantities[itemId]?.price || price,
+                        restaurantName: prevQuantities[itemId]?.restaurantName || restaurantName
                     },
                 }));
                 setPrice((prevPrice) => prevPrice + price * quantity);
+                setRestaurantName(restaurantName);
             }
         }
 
@@ -100,27 +107,30 @@ export const CartProvider = ({ children }) => {
     };
 
 
-    const addToCart = (price, restaurantId, itemId, quantity, dishName) => {
+    const addToCart = (price, restaurantId, itemId, quantity, dishName, restaurantName) => {
         // console.log("quantity", quantity)
         // Check if the item is already in the cart
         if (currentRestaurantId && currentRestaurantId !== restaurantId && Object.keys(quantities).length > 0) {
             // Show the confirmation popup
             const confirmationData = { restaurantId, itemId, quantity, price, dishName };
             setConfirmationData(confirmationData);
+            setRestaurantName(restaurantName);
         } else {
             // Proceed to add the item to the cart
             if (!currentRestaurantId) {
                 setCurrentRestaurantId(restaurantId);
+                // setQuantities({ [itemId]: { quantity, dishName, price, restaurantName } });
             }
 
             setPrice((prevPrice) => prevPrice + price * quantity);
-
+            setRestaurantName(restaurantName);
             setQuantities((prevQuantities) => ({
                 ...prevQuantities,
                 [itemId]: {
                     quantity: (prevQuantities[itemId]?.quantity || 0) + quantity,
                     dishName: dishName,
-                    price: price
+                    price: price,
+                    restaurantName: restaurantName
                 },
             }));
 
@@ -155,13 +165,14 @@ export const CartProvider = ({ children }) => {
     // console.log(Object.values(quantities).reduce((acc, curr) => curr));
 
     console.log(TotalPrice, "total price")
+    console.log(restaurantName, "restaurant name")
 
     // const totalItems = Object.values(quantities).reduce((acc, curr) => acc + curr.quantity, 0);
 
     return (
         <div>
             {/* Your application content */}
-            <CartContext.Provider value={{ quantities, addToCart, totalItems, TotalPrice, removeFromCart }}>
+            <CartContext.Provider value={{ quantities, addToCart, totalItems, TotalPrice, removeFromCart, restaurantName }}>
                 {children}
             </CartContext.Provider>
             {confirmationData.restaurantId && (

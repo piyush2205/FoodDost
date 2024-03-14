@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import logo from "../logo.png"
 import { Link, Navigate } from 'react-router-dom'
 import GoogleButton from 'react-google-button'
@@ -12,8 +12,11 @@ import { useCart } from './CartContext';
 import axios from 'axios'
 import _ from 'lodash';
 function Navbar() {
+    const searchContainerRef = useRef(null);
+    console.log(searchContainerRef.current);
     const [searchTerm, setSearchTerm] = useState('');
     const [results, setResults] = useState([]);
+    const [showResults, setShowResults] = useState(false);
     const { totalItems } = useCart();
     const { logOut } = useUserAuth()
     const [isModalOpen, setIsModalOpen] = useState(false)
@@ -46,6 +49,7 @@ function Navbar() {
         try {
             const response = await axios.get(`http://localhost:2223/foodapidata/search?q=${encodeURIComponent(searchTerm)}`);
             setResults(response.data);
+            setShowResults(true);
         } catch (error) {
             console.error('Error fetching search results:', error);
         }
@@ -162,8 +166,19 @@ function Navbar() {
             document.body.style.overflow = 'auto';
         };
     }, [isModalOpen]);
+    const handleClickOutSide = (e) => {
+        if (searchContainerRef.current && !searchContainerRef.current.contains(e.target)) {
+            setShowResults(false);
+        }
+    }
+    useEffect(() => {
+        document.addEventListener('click', handleClickOutSide);
 
-    console.log(results);
+        return () => {
+            document.removeEventListener('click', handleClickOutSide);
+        };
+    }, []);
+    // console.log(results);
     return (
         <>
             <header className='h-20 bg-[#ffcc00]  lg:w-full shadow-md content-center items-center self-center  bg-gradient-to-r from-[#ffcc00] to-[#efdf2f] '  >
@@ -173,7 +188,7 @@ function Navbar() {
                     </div>
                     <div>
                         <input placeholder='Search for restaurant,cusie or a dish' value={searchTerm}
-                            onChange={handleSearch} className=' sm:h-10 sm:w-26  lg:h-10 lg:w-96 border rounded ' />
+                            onChange={handleSearch} onClick={() => setShowResults(true)} className=' sm:h-10 sm:w-26  lg:h-10 lg:w-96 border rounded ' />
 
                         {
                             searchTerm && <button onClick={() => setSearchTerm("")} className='absolute top-[-287px] bottom-[358px] left-[830px] ' >X</button>
@@ -181,7 +196,7 @@ function Navbar() {
                         }
 
                         {
-                            results.length > 0 && <div className='absolute top-15 left-57 w-[25%] h-[600px] p-2 bg-white shadow-md overflow-y-scroll '>
+                            results.length > 0 && <div ref={searchContainerRef} className='absolute top-15 left-57 w-[25%] h-[auto] p-2 bg-white shadow-md overflow-y-scroll '>
                                 {
                                     <ul>
                                         {

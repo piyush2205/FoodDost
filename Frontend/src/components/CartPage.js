@@ -4,10 +4,11 @@ import React from 'react'
 import { useCart } from './CartContext';
 import Breadcrum from './Breadcrum';
 import { Link } from 'react-router-dom';
-
+import { useNavigate } from 'react-router-dom';
+import emptyCart from "../Assets/empty-cart.jpeg"
 const CartPage = () => {
-    const { quantities, totalItems, TotalPrice, removeFromCart } = useCart();
-    console.log(TotalPrice, quantities, totalItems,)
+    const { quantities, totalItems, TotalPrice, removeFromCart, restaurantName } = useCart();
+    console.log(TotalPrice, quantities, totalItems, restaurantName)
     const handleDelete = (itemId) => {
         removeFromCart(itemId)
     }
@@ -16,12 +17,14 @@ const CartPage = () => {
         <div className="container mx-auto w-[1240px] mt-10">
             <Breadcrum />
             <h1 className="text-3xl font-semibold mb-8"> Your Food Court</h1>
-            <h1>
-                Restaurant Name:{' Restaurant Name'}
-            </h1>
+            {
+                totalItems === 0 ? <img className='w-[70vw] h-[auto]  m-[auto] ' src={emptyCart} /> : <h1 className='text-3xl Poppins py-4 '>
+                    Restaurant Name : {restaurantName}
+                </h1>
+            }
 
             {Object.keys(quantities).length === 0 ? (
-                <p>Your cart is empty.</p>
+                <p className="text-3xl Poppins py-4 text-center m-[auto] ">Your cart is empty.</p>
             ) : (
                 <div className="border border-gray-300 p-4">
                     <table className="w-full border-collapse border">

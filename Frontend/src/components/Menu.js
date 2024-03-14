@@ -27,6 +27,7 @@ function Menu() {
 
     const handleIncDec = (itemId, action, dishName) => {
         const restaurantId = AllData.id;
+        const restaurantName = AllData.name;
         const price = AllData.menu.items.find(item => item.itemId === itemId)?.price || 0;
         // Ensure quantity is a positive integer
         let quantityChange = action === 'increment' ? 1 : -1;
@@ -38,7 +39,8 @@ function Menu() {
             return;
         }
 
-        addToCart(price, restaurantId, itemId, quantityChange, dishName);
+        // If the operation would make the quantity greater than totalItems, set quantityChange to make it totalItems
+        addToCart(price, restaurantId, itemId, quantityChange, dishName, restaurantName);
     };
 
     return (

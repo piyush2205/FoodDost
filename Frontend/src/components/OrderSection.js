@@ -8,6 +8,7 @@ import { LiaArrowCircleLeftSolid } from "react-icons/lia";
 import { LiaArrowCircleRightSolid } from "react-icons/lia";
 import Breadcrum from './Breadcrum';
 function OrderSection() {
+    const [isRating4PlusActive, setRating4PlusActive] = useState(false);
     const [isFilterEmpty, setIsFilterEmpty] = useState(false);
     const [foodData, SetFoodData] = useState([])
     const [loading, setLoading] = useState(false)
@@ -34,6 +35,7 @@ function OrderSection() {
         const newFood = foodData.filter((el) => el.rating > 4);
         SetFoodData(newFood);
         setIsFilterEmpty(newFood.length === 0);
+        setRating4PlusActive(!isRating4PlusActive);
     };
 
     const handlePureveg = () => {
@@ -45,6 +47,7 @@ function OrderSection() {
     const handleClear = () => {
 
         handleApiCall();
+        setRating4PlusActive(false);
         setIsFilterEmpty(false);
     };
 
@@ -109,8 +112,13 @@ function OrderSection() {
             <div className='border-b m-auto w-[1240px] '>
 
                 <div className=' flex    m-2 gap-2'>
+                    {
+                        isRating4PlusActive ? <button onClick={handleClear} className="rounded-[50px] bg-yellow-300 px-3.5 py-2.5 text-sm font-semibold text-black shadow-sm hover:bg-yellow-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 " >Ratings 4.0+
+                            <span className="ml-2.5 h-5 w-5  ">
+                                &times;
+                            </span>
+                        </button> : <button onClick={handleRating} className="rounded-[50px] bg-yellow-300 px-3.5 py-2.5 text-sm font-semibold text-black shadow-sm hover:bg-yellow-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 " >Ratings 4.0+</button>}
 
-                    <button onClick={handleRating} className="rounded-md bg-yellow-300 px-3.5 py-2.5 text-sm font-semibold text-black shadow-sm hover:bg-yellow-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 " >Rating 4+</button>
                     <button onClick={handlePureveg} className="rounded-md bg-yellow-300 px-3.5 py-2.5 text-sm font-semibold text-black shadow-sm hover:bg-yellow-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 " >Pure Veg</button>
                     <button onClick={handleLessThan300} className="rounded-md bg-yellow-300 px-3.5 py-2.5 text-sm font-semibold text-black shadow-sm hover:bg-yellow-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 " >Less Than Rs.300</button>
                     <button onClick={handleClear} className="rounded-md bg-yellow-300 px-3.5 py-2.5 text-sm font-semibold text-black shadow-sm hover:bg-yellow-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 " >Clear Filters</button>
