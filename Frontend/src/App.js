@@ -14,7 +14,6 @@ function App() {
   const [loading, setLoading] = React.useState("true")
 
 
-
   setTimeout(() => {
     setLoading(false)
   }, 1000)
@@ -25,9 +24,7 @@ function App() {
     <img style={{ "margin": "300px 650px", height: "100px" }} src={`${myanimation}`} />
   </> : (
     <>
-
       <Navbar />
-
       <AllRouter />
       <Footer />
     </>

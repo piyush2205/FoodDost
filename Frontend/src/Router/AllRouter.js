@@ -17,8 +17,6 @@ const PopupAlert = ({ isOpen, onClose, message }) => {
     if (!isOpen) return null;
 
     return (
-
-
         <div className="bg-red-100 border backdrop-blur-sm w-[50%] h-[50%] m-[auto] fixed inset-0 border-red-400 bg-opacity-90 text-red-700 px-4 py-3 rounded  flex justify-center items-center" role="alert">
             <strong className="font-bold text-2xl m-2">Namaste!</strong>
             <span className="block sm:inline text-2xl m-2">{message}</span>

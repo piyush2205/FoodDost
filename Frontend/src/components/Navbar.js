@@ -179,6 +179,22 @@ function Navbar() {
         };
     }, []);
     // console.log(results);
+
+
+    // useEffect(() => {
+    const handleSearchClick = (id) => {
+        console.log(id, "myid")
+        setSearchTerm("")
+        setInterval(() => {
+            window.location.reload()
+        }, 1000)
+    }
+    // setShowResults(false)
+    // handleSearchClick()
+    // })
+
+
+
     return (
         <>
             <header className='h-20 bg-[#ffcc00]  lg:w-full shadow-md content-center items-center self-center  bg-gradient-to-r from-[#ffcc00] to-[#efdf2f] '  >
@@ -202,7 +218,8 @@ function Navbar() {
                                         {
                                             results.map((result) => (
                                                 <Link to={`/orderNow/${result._id}`}
-                                                    onClick={() => setSearchTerm("")} // Clear the search term on click
+                                                    onClick={handleSearchClick}
+                                                // Clear the search term on click
 
                                                 >
                                                     <li key={result._id} className='flex items-center border p-2 gap-2 cursor-pointer '>

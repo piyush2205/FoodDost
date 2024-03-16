@@ -52,7 +52,12 @@ export const CartProvider = ({ children }) => {
         price: 0,
         dishName: null,
     });
-
+    const resetCart = () => {
+        setCurrentRestaurantId(null);
+        setPrice(0);
+        setRestaurantName("");
+        setQuantities({});
+    };
     const closeConfirmationModal = () => {
         setConfirmationData({
             restaurantId: null,
@@ -78,7 +83,7 @@ export const CartProvider = ({ children }) => {
         const { restaurantId, itemId, quantity, price, dishName, restaurantName } = confirmationData;
 
         if (currentRestaurantId && currentRestaurantId !== restaurantId && Object.keys(quantities).length > 0) {
-            setQuantities({ [itemId]: { quantity, dishName, price } });
+            setQuantities({ [itemId]: { quantity, dishName, price, restaurantName } });
             setPrice(price * quantity);
             setCurrentRestaurantId(restaurantId);
             setRestaurantName(restaurantName);
@@ -112,6 +117,7 @@ export const CartProvider = ({ children }) => {
         // Check if the item is already in the cart
         if (currentRestaurantId && currentRestaurantId !== restaurantId && Object.keys(quantities).length > 0) {
             // Show the confirmation popup
+            // console.log(currentRestaurantId, restaurantId, itemId, quantity, price, dishName, restaurantName)
             const confirmationData = { restaurantId, itemId, quantity, price, dishName };
             setConfirmationData(confirmationData);
             setRestaurantName(restaurantName);
@@ -141,23 +147,39 @@ export const CartProvider = ({ children }) => {
 
 
 
-    const removeFromCart = (itemId) => {
+    const removeFromCart = (itemId, price) => {
+        // console.log("remove from cart", itemId, price)
+        // Remove the item from the cart
 
-        setQuantities((currentQuantities) => {
-            const newQuantities = { ...currentQuantities };
-            const itemQuantity = newQuantities[itemId]?.quantity || 0;
+        // setQuantities((currentQuantities) => {
+        //     const newQuantities = { ...currentQuantities };
+        //     const itemQuantity = newQuantities[itemId]?.quantity || 0;
 
-            if (itemQuantity > 0) {
-                const itemPrice = newQuantities[itemId]?.price || 0;
-                const itemTotalPrice = itemQuantity * itemPrice;
-                setPrice((prevPrice) => prevPrice - itemTotalPrice);
-            }
+        //     if (itemQuantity > 0) {
+        //         const itemPrice = newQuantities[itemId]?.price || 0;
+        //         const itemTotalPrice = itemQuantity * itemPrice;
+        //         setPrice((prevPrice) => prevPrice - itemTotalPrice);
 
-            delete newQuantities[itemId];
-            return newQuantities;
-        });
+        //     }
 
 
+
+        //     delete newQuantities[itemId];
+        //     return newQuantities;
+
+        // });
+
+        const newQuantities = { ...quantities };
+        const itemPrice = newQuantities[itemId]?.price || 0;
+        const itemQuantity = newQuantities[itemId]?.quantity || 0;
+        delete newQuantities[itemId];
+
+        if (Object.keys(newQuantities).length === 0) {
+            resetCart(); // Resets everything if cart is empty after removal
+        } else {
+            setQuantities(newQuantities);
+            setPrice(prevPrice => prevPrice - (itemPrice * itemQuantity));
+        }
     };
 
 
