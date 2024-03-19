@@ -4,8 +4,8 @@
 
 <h1>Introduction</h1>
 <p>FoodDost is a web-based food delivery platform developed using React.js, HTML, and CSS. This project was created as a solo endeavor over a span of 7 days, aiming to provide users with a seamless browsing and ordering experience.</p>
- <img  alt="demoimg1" width="80" height="80" src="![Untitled](https://github.com/piyush2205/FoodDost/assets/106039415/4aedd163-348b-4532-8f17-d13a141a39fd)" >
- <img src="![New Website Blue Mockup Instagram - Laptop](https://github.com/piyush2205/FoodDost/assets/106039415/8acbc9cf-1fdf-41e3-8ae3-b248cf99f536)"/>
+ <img  alt="demoimg1" width="80" height="80" src="![Untitled](https://github.com/piyush2205/FoodDost/assets/106039415/4aedd163-348b-4532-8f17-d13a141a39fd)" />
+<!--  <img src="![New Website Blue Mockup Instagram - Laptop](https://github.com/piyush2205/FoodDost/assets/106039415/8acbc9cf-1fdf-41e3-8ae3-b248cf99f536)"/> -->
 <h1>Features</h1>
 <ul>
 <li><b>Browse Restaurants:</b> Explore a variety of restaurants offering diverse cuisines.</li>
