@@ -12,6 +12,7 @@ import CartPage from '../components/CartPage'
 import Menu from '../components/Menu'
 import { lazy, Suspense } from 'react'
 import Animation from '../Assets/Animation.gif'
+import Navbar from '../components/Navbar'
 
 const PopupAlert = ({ isOpen, onClose, message }) => {
     if (!isOpen) return null;
@@ -64,20 +65,36 @@ function AllRouter() {
 
                     <Route path='/' element={<HeroSection />} />
 
-                    <Route path='/LocationSection' element={<LocationSection />} />
+                    {/* <Route path='/LocationSection' element={<LocationSection />} /> */}
                     <Route path='/Gorakhpur' element={<OrderSection />} />
-                    <Route path='/SingleComponet/:id' element={<SingleComponet />} />
-
-                    <Route path='/orderNow/:id' element={<Menu />} />
-
+                    <Route path='/Gorakhpur/SingleComponet/:id' element={<SingleComponet />} />
+                    <Route path='/Gorakhpur/:id' element={<Menu />} />
                     <Route path='/Cart' element={<CartPage />} />
-
                     <Route path='/payment' element={
                         <ProtectedRoute>
                             <Payment />
                         </ProtectedRoute>
                     } />
-                    <Route path='*' element={<HeroSection />} />
+                    {/* <Route path="/login" element={<HeroSection />} > */}
+
+                    {/* </Route> */}
+                    <Route path='*' element={
+
+                        <>
+
+                            <h1 className='text-3xl font-bold text-center'>
+                                Page Not Found
+                            </h1>
+                            <h1 className='text-3xl font-bold text-center'>
+                                404
+                            </h1>
+                            <p className='text-center'>
+                                The page you are looking for does not exist
+                            </p>
+
+                            <footer />
+                        </>
+                    } />
                 </Routes>
             </Suspense>
 

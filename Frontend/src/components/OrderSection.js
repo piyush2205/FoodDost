@@ -6,7 +6,9 @@ import axios from "axios"
 import CardComponent from './cardComponent'
 import { LiaArrowCircleLeftSolid } from "react-icons/lia";
 import { LiaArrowCircleRightSolid } from "react-icons/lia";
+import "../Css/OrderSection.css"
 import Breadcrum from './Breadcrum';
+
 function OrderSection() {
     const [isRating4PlusActive, setRating4PlusActive] = useState(false);
     const [isFilterEmpty, setIsFilterEmpty] = useState(false);
@@ -59,7 +61,7 @@ function OrderSection() {
 
     return (
         <>
-            <h1 className='font-semibold text-4xl antialiased text-center mt-10 mb-10 '>Best Food in Gorakhpur</h1>
+            <h1 className='font-semibold text-4xl sm:text-5xl block  antialiased text-center mt-10 mb-10 '>Best Food in Gorakhpur</h1>
             {/* <div className='main-container'>
                 &#10094;
                 <div className='inner-conatiner' >
@@ -109,29 +111,26 @@ function OrderSection() {
 
 
             <Breadcrum />
-            <div className='border-b m-auto w-[1240px] '>
+            <div className='border-b m-auto lg:w-[1240px] md:w-[1240px] sm:w-80 '>
 
                 <div className=' flex    m-2 gap-2'>
-                    {
-                        isRating4PlusActive ? <button onClick={handleClear} className="rounded-[50px] bg-yellow-300 px-3.5 py-2.5 text-sm font-semibold text-black shadow-sm hover:bg-yellow-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 " >Ratings 4.0+
-                            <span className="ml-2.5 h-5 w-5  ">
-                                &times;
-                            </span>
-                        </button> : <button onClick={handleRating} className="rounded-[50px] bg-yellow-300 px-3.5 py-2.5 text-sm font-semibold text-black shadow-sm hover:bg-yellow-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 " >Ratings 4.0+</button>}
 
-                    <button onClick={handlePureveg} className="rounded-md bg-yellow-300 px-3.5 py-2.5 text-sm font-semibold text-black shadow-sm hover:bg-yellow-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 " >Pure Veg</button>
-                    <button onClick={handleLessThan300} className="rounded-md bg-yellow-300 px-3.5 py-2.5 text-sm font-semibold text-black shadow-sm hover:bg-yellow-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 " >Less Than Rs.300</button>
-                    <button onClick={handleClear} className="rounded-md bg-yellow-300 px-3.5 py-2.5 text-sm font-semibold text-black shadow-sm hover:bg-yellow-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 " >Clear Filters</button>
+
+                    <button onClick={handleRating} className="rounded-[50px] bg-yellow-300 px-3.5 py-2.5 text-sm font-semibold text-black shadow-sm hover:bg-yellow-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 " >Ratings 4.0+</button>
+
+                    <button onClick={handlePureveg} className="rounded-[50px] bg-yellow-300 px-3.5 py-2.5 text-sm font-semibold text-black shadow-sm hover:bg-yellow-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 " >Pure Veg</button>
+                    <button onClick={handleLessThan300} className="rounded-[50px] bg-yellow-300 px-3.5 py-2.5 text-sm font-semibold text-black shadow-sm hover:bg-yellow-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 " >Less Than Rs.300</button>
+                    <button onClick={handleClear} className="rounded-[50px] bg-yellow-300 px-3.5 py-2.5 text-sm font-semibold text-black shadow-sm hover:bg-yellow-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 " >Clear Filters</button>
                 </div>
 
             </div>
             {
-                loading ? <div className='w-[1240px] m-auto' style={{ margin: "auto", marginTop: "40px", marginBottom: "20px" }} >
+                loading ? <div className="flex min-h-screen items-center justify-center lg:w-[1240px] md:w-[1240px] sm:w-80 m-[auto]">
 
                     {isFilterEmpty ? (
                         <p><p>No items available based on the current filter.</p></p>
                     ) : (
-                        <div className='grid  gap-10 justify-center mt-12 mb-12  ' style={{ margin: "auto", "gridTemplateColumns": "repeat(3,1fr)" }}>
+                        <div className="grid  sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4 sm:gap-4 lg:gap-4  " >
                             {foodData.map((el, i) => {
                                 return <CardComponent {...el} key={i} />;
                             })}

@@ -9,11 +9,12 @@ import { FaUserCircle } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
 import { useUserAuth } from './UserAuthContext';
 import { useCart } from './CartContext';
+import { FaSearch } from "react-icons/fa";
 import axios from 'axios'
 import _ from 'lodash';
 function Navbar() {
     const searchContainerRef = useRef(null);
-    console.log(searchContainerRef.current);
+    // console.log(searchContainerRef.current);
     const [searchTerm, setSearchTerm] = useState('');
     const [results, setResults] = useState([]);
     const [showResults, setShowResults] = useState(false);
@@ -197,14 +198,18 @@ function Navbar() {
 
     return (
         <>
-            <header className='h-20 bg-[#ffcc00]  lg:w-full shadow-md content-center items-center self-center  bg-gradient-to-r from-[#ffcc00] to-[#efdf2f] '  >
-                <div className=' lg:w-[1240px]  sm:w-auto  flex items-center place-self-center justify-between  h-20 ' style={{ margin: "auto" }} >
+            <header className='h-20 bg-[#ffcc00] lg:w-full shadow-md content-center items-center self-center  bg-gradient-to-r from-[#ffcc00] to-[#efdf2f] '  >
+                <div className=' lg:w-[1240px]   sm:w-auto  flex items-center place-self-center justify-between  h-20 ' style={{ margin: "auto" }} >
                     <div className='items-center'>
                         <Link to={"/"}>   <img src={logo} alt='logo' className='h-16 w-16' /> </Link>
                     </div>
                     <div>
-                        <input placeholder='Search for restaurant,cusie or a dish' value={searchTerm}
-                            onChange={handleSearch} onClick={() => setShowResults(true)} className=' sm:h-10 sm:w-26  lg:h-10 lg:w-96 border rounded ' />
+                        <div className='relative flex items-center'>
+                            <input placeholder='Search for restaurant,cusie or a dish' value={searchTerm}
+                                onChange={handleSearch} onClick={() => setShowResults(true)} className=' sm:h-10 sm:w-26  lg:h-10 lg:w-96 border rounded ' />
+                            {<FaSearch className='absolute top-[13px] bottom-[0px] right-[15px] ' />}
+                        </div>
+
 
                         {
                             searchTerm && <button onClick={() => setSearchTerm("")} className='absolute top-[-287px] bottom-[358px] left-[830px] ' >X</button>
@@ -217,7 +222,7 @@ function Navbar() {
                                     <ul>
                                         {
                                             results.map((result) => (
-                                                <Link to={`/orderNow/${result._id}`}
+                                                <Link to={`Gorakhpur/${result._id}`}
                                                     onClick={handleSearchClick}
                                                 // Clear the search term on click
 
@@ -245,6 +250,8 @@ function Navbar() {
                             </div>
                         }
                     </div>
+
+
                     {/* Responsive Navigation */}
                     <div className='lg:hidden'>
                         <button onClick={toggleMobileMenu} className='focus:outline-none'>
@@ -287,11 +294,11 @@ function Navbar() {
                                     :
                                     < ul className='flex font-semibold gap-10 content-center items-center' >
 
-                                        <li> <Link onClick={() => openModal('login')} to={"/login"}>
+                                        <li> <Link onClick={() => openModal('login')} className='cursor-pointer' >
                                             Login
                                         </Link></li>
 
-                                        <li> <a onClick={() => openModal('signup')} href='#' >
+                                        <li> <a onClick={() => openModal('signup')} className='cursor-pointer' >
                                             Sign Up
                                         </a></li>
                                         <div className='relative flex content-center  items-center  cursor-pointer '  ><span className='cart-svg' style={{ strokeWidth: "2px", "stroke": "#282c3f", }} ><svg className="_1GTCc _2MSid" viewBox="-1 0 37 32" height="20" width="20" ><path d="M4.438 0l-2.598 5.11-1.84 26.124h34.909l-1.906-26.124-2.597-5.11z"></path></svg><span className=' absolute cart-span'>{totalItems}</span></span>
