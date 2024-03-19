@@ -8,7 +8,7 @@
 <h3>Link:<a>www.xyz.com</a></h3>
 <div>
   <img src="https://github.com/piyush2205/FoodDost/assets/106039415/4136d6b9-d47e-4d1f-ae5a-fc56c681c6c6)" width="300" height="500" />
-<img src="https://github.com/piyush2205/FoodDost/assets/106039415/3aa5d60b-e599-4bc0-8571-fb8c06726200) width="400" height="600" " />
+<img src="https://github.com/piyush2205/FoodDost/assets/106039415/3aa5d60b-e599-4bc0-8571-fb8c06726200) width="300" height="500" />
 
 </div>
 
