@@ -8,7 +8,8 @@
 <img src="![New Website Blue Mockup Instagram - Laptop](https://github.com/piyush2205/FoodDost/assets/106039415/dc6f8ec5-fe44-4662-a4af-17f1afaba1c9)" />
 <!-- <img src="![Untitled](https://github.com/piyush2205/FoodDost/assets/106039415/47a0c2be-c19a-4bbc-af42-21f1eb962e95)"/>
  -->
- ![Untitled](https://github.com/piyush2205/FoodDost/assets/106039415/4aedd163-348b-4532-8f17-d13a141a39fd)
+ <img src="![Untitled](https://github.com/piyush2205/FoodDost/assets/106039415/4aedd163-348b-4532-8f17-d13a141a39fd)" />
+ 
 ![New Website Blue Mockup Instagram - Laptop](https://github.com/piyush2205/FoodDost/assets/106039415/8acbc9cf-1fdf-41e3-8ae3-b248cf99f536)
 
 <h1>Features</h1>
