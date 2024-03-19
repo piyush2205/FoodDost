@@ -1,62 +1,81 @@
 
-FoodDost - Your Friendly Food Delivery Website
-Welcome to FoodDost, your go-to destination for delicious meals delivered straight to your doorstep. Whether you're craving comfort food or exploring new flavors, FoodDost has got you covered.
+<h1>FoodDost - Your Friendly Food Delivery Website</h1>
+<p>Welcome to FoodDost, your go-to destination for delicious meals delivered straight to your doorstep. Whether you're craving comfort food or exploring new flavors, FoodDost has got you covered.</p>
 
-Introduction
-FoodDost is a web-based food delivery platform developed using React.js, HTML, and CSS. This project was created as a solo endeavor over a span of 7 days, aiming to provide users with a seamless browsing and ordering experience.
+<h1>Introduction</h1>
+<p>FoodDost is a web-based food delivery platform developed using React.js, HTML, and CSS. This project was created as a solo endeavor over a span of 7 days, aiming to provide users with a seamless browsing and ordering experience.</p>
+<!-- <img src="https://drive.google.com/file/d/1qdfkW_StdbUcF0WkGzEp1R2n6P9YInwp/view?usp=drive_link" alt="laptop_homepage_mockup"/> -->
+<img src="![New Website Blue Mockup Instagram - Laptop](https://github.com/piyush2205/FoodDost/assets/106039415/dc6f8ec5-fe44-4662-a4af-17f1afaba1c9)" />
+<!-- <img src="![Untitled](https://github.com/piyush2205/FoodDost/assets/106039415/47a0c2be-c19a-4bbc-af42-21f1eb962e95)"/>
+ -->
+ ![Untitled](https://github.com/piyush2205/FoodDost/assets/106039415/4aedd163-348b-4532-8f17-d13a141a39fd)
+![New Website Blue Mockup Instagram - Laptop](https://github.com/piyush2205/FoodDost/assets/106039415/8acbc9cf-1fdf-41e3-8ae3-b248cf99f536)
 
-Features
-Browse Restaurants: Explore a variety of restaurants offering diverse cuisines.
-View Menus: Browse through restaurant menus to discover mouthwatering dishes.
-Place Orders: Easily place orders for your favorite items with just a few clicks.
-User Authentication: Secure user authentication ensures a personalized experience.
-Responsive Design: Enjoy a consistent experience across devices of all sizes.
-Tech Stack
-Frontend: React.js, HTML, CSS
-Routing: React Router
-State Management: React Hooks (useState, useEffect)
-UI Styling: CSS Modules, Tailwind CSS (optional)
-Data Fetching: Axios (optional)
-Deployment: Netlify, Vercel, GitHub Pages (choose one)
-Installation
-To run FoodDost locally, follow these steps:
+<h1>Features</h1>
+<ul>
+<li><b>Browse Restaurants:</b> Explore a variety of restaurants offering diverse cuisines.</li>
+  
+<li> <b>View Menus:</b> Browse through restaurant menus to discover mouthwatering dishes.</li>
 
-Clone the repository to your local machine:
+<li> <b>Place Orders:</b> Easily place orders for your favorite items with just a few clicks.</li>
 
-bash
-Copy code
+<li> <b>User Authentication:</b> Secure user authentication ensures a personalized experience.</li>
+
+<li> <b>Responsive Design:</b> Enjoy a consistent experience across devices of all sizes.</li>
+
+
+</ul>
+
+<h1>
+Tech Stack</h1>
+<ul>
+<li><b>Frontend:</b> React.js, HTML, CSS</li>
+  
+<li> <b>Routing:</b>React Router</li>
+
+<li> <b>State Management:</b> React Hooks (useState, useEffect)</li>
+
+<li> <b>UI Styling:</b> CSS Modules, Tailwind CSS </li>
+
+<li> <b>Data Fetching:</b>Axios </li>
+
+<li> <b>Deployment:</b> Vercel</li>
+</ul>
+
+<h1>Installation</h1>
+<h3>To run FoodDost locally, follow these steps:</h3>
+
+<h5>1. Clone the repository to your local machine:</h5>
+
 git clone https://github.com/your-username/fooddost.git
-Navigate to the project directory:
 
-bash
-Copy code
+<h5>2. Navigate to the project directory:</h5>
+
 cd fooddost
-Install dependencies using npm or yarn:
 
-Copy code
+<h5>3.Install dependencies using npm or yarn:</h5>
 npm install
 or
-
-Copy code
 yarn install
-Start the development server:
 
-sql
-Copy code
+<h5>4.Start the development server:</h5>
+
 npm start
 or
-
-sql
-Copy code
 yarn start
-Open your browser and visit http://localhost:3000 to view FoodDost.
+
+<h4>Open your browser and visit http://localhost:3000 to view FoodDost.</h4>
 
 Contributing
 If you'd like to contribute to FoodDost, feel free to fork the repository and submit pull requests with your changes.
 
-Credits
-Developer: Your Name
-Inspiration: [Insert any sources or inspirations here]
-License
-This project is licensed under the MIT License.
+<h1>Credits</h1>
+<ul>
+<li><b>Developer: </b> Piyush Kumar Singh</li>
+  
+<li> <b>License:</b>MIT</li>
+
+<li>This project is licensed under the MIT License.</li>
+</ul>
+
 
