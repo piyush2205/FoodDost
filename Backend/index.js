@@ -5,9 +5,9 @@ const cors = require("cors")
 const app = express()
 app.use(express.json())
 app.use(cors({
-    origin: "https://food-dost.vercel.app",
+    origin: ["https://food-dost.vercel.app"],
     methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type"],
+    // allowedHeaders: ["Content-Type"],
     credentials: true
 
 }))
