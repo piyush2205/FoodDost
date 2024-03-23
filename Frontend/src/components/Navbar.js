@@ -48,7 +48,7 @@ function Navbar() {
 
     const fetchResults = async () => {
         try {
-            const response = await axios.get(`https://fooddost.onrender.com/foodapidata/search?q=${encodeURIComponent(searchTerm)}`);
+            const response = await axios.get(`https://food-dost-api.vercel.app/foodapidata/search?q=${encodeURIComponent(searchTerm)}`);
             setResults(response.data);
             setShowResults(true);
         } catch (error) {
@@ -335,11 +335,11 @@ function Navbar() {
                             :
                             < ul className='lg:flex lg:font-semibold gap-10 sm:hidden md:hidden  ' >
 
-                                <li> <Link onClick={() => openModal('login')} to={"/login"}>
+                                <li> <Link onClick={() => openModal('login')} >
                                     Login
                                 </Link></li>
 
-                                <li> <a onClick={() => openModal('signup')} href='#' >
+                                <li> <a onClick={() => openModal('signup')} >
                                     Sign Up
                                 </a></li>
                             </ul>
