@@ -48,7 +48,7 @@ function Navbar() {
 
     const fetchResults = async () => {
         try {
-            const response = await axios.get(`http://localhost:2223/foodapidata/search?q=${encodeURIComponent(searchTerm)}`);
+            const response = await axios.get(`http://food-dost-api-v1.vercel.app/foodapidata/search?q=${encodeURIComponent(searchTerm)}`);
             setResults(response.data);
             setShowResults(true);
         } catch (error) {
@@ -59,7 +59,7 @@ function Navbar() {
     //     const debounceSearch = debounce(
     //         async () => {
     //             try {
-    //                 const res = await axios.get(`http://localhost:2223/foodapidata/search?q=${encodeURIComponent(searchTerm)}`)
+    //                 const res = await axios.get(`http://food-dost-api-v1.vercel.app/foodapidata/search?q=${encodeURIComponent(searchTerm)}`)
     //                 setResult(res.data)
     //             } catch (err) {
     //                 console.log(err)
