@@ -12,7 +12,7 @@ function Menu() {
     window.scroll(0, 0)
     useEffect(() => {
         const fetchdata = async () =>
-            await axios.get(`https://food-dost-api.vercel.app/foodapidata/singleData/${id}`).then((res) => {
+            await axios.get(`https://fooddost.onrender.com/foodapidata/singleData/${id}`).then((res) => {
 
                 setData(res.data)
             }).catch((err) => {
