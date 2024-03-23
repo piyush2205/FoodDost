@@ -16,7 +16,7 @@ function OrderSection() {
     const [loading, setLoading] = useState(false)
     const handleApiCall = async () => {
         setLoading(false)
-        axios.get(`http://localhost:2223/foodapidata`).then((res) => {
+        axios.get(`http://food-dost-api-v1.vercel.app/foodapidata`).then((res) => {
             // console.log(res.data)
 
             SetFoodData(res.data)
