@@ -30,7 +30,7 @@ const connection = async () => {
 }
 
 app.get('/', (req, res) => {
-    res.send('Hello Worldd!')
+    res.send('Hello Worlddd!')
 })
 
 app.post('/addFoodandRes/restaurants', async (req, res) => {
