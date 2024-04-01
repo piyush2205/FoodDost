@@ -1,16 +1,17 @@
 {
     "version": 2,
+    "name": "fooddost",
     "builds": [
         {
-            "src": "*.js",
+            "src": "index.js",
             "use": "@vercel/node"
 
         }
     ],
     "routes": [
         {
-            "src": "/api/(.*)",
-            "dest": "/"
+            "src": "/(.*)",
+            "dest": "/index.js"
         }
     ]
 }
