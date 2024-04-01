@@ -601,6 +601,8 @@ function Navbar() {
                                                 }
                                                 <span className="pl-2">{user?.displayName || localStorage.getItem('userName')}</span>
                                             </button>
+                                            <div className='relative flex content-center  items-center  cursor-pointer '  ><span className='cart-svg' style={{ strokeWidth: "2px", "stroke": "#282c3f", }} ><svg className="_1GTCc _2MSid" viewBox="-1 0 37 32" height="20" width="20" ><path d="M4.438 0l-2.598 5.11-1.84 26.124h34.909l-1.906-26.124-2.597-5.11z"></path></svg><span className=' absolute cart-span'>{totalItems}</span></span>
+                                                <Link to={"/Cart"} className="block  py-2 px-2 font-semibold  cursor-pointer">Cart</Link></div>
                                             {isDropdownOpen && (
                                                 <div className="absolute right-0 mt-2 py-2 w-48 bg-white rounded-md shadow-xl z-20">
                                                     <Link to={"/profile"} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profile</Link>

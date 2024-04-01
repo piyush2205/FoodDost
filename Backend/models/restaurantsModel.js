@@ -30,6 +30,7 @@ const restaurantSchema = new mongoose.Schema({
     rating: Number,
     foodCategory: [String],
     priceRange: Number,
+    isVeg: Boolean,
     restaurantAddress: {
         street: String,
         city: String,
