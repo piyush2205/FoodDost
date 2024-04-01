@@ -36,7 +36,41 @@ const CustomAlert = ({ message, isOpen, onClose, }) => {
         </div>
     )
 }
+const CustomAlert2 = ({ message, isOpen, onClose, }) => {
+    // Do not render if not opened.
+    if (!isOpen) return null;
+    return (
+        <div class="  px-4 py-3 sm:w-[40%] border backdrop-blur-sm w-[10%] h-[3%] left-[30%] top-[1%] fixed inset-0 rounded sm:h-[10%]  lg:flex sm:block justify-center items-center z-10 gap-3 bg-teal-100  border-t-4 border-teal-500 rounded-b text-teal-900 shadow-md" role="alert">
+            <div class="flex">
+                <div class="py-1"><svg class="fill-current h-6 w-6 text-teal-500 mr-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z" /></svg></div>
+                <div>
+                    <p class="font-bold">Error</p>
+                    <p class="text-sm">{message}.</p>
+                </div>
+            </div>
+        </div>
+    )
 
+
+}
+
+const CustomAlert3 = ({ message, isOpen, onClose, }) => {
+    // Do not render if not opened.
+    if (!isOpen) return null;
+    return (
+        <div class="  px-4 py-3 sm:w-[40%] border backdrop-blur-sm w-[10%] h-[3%] left-[30%] top-[1%] fixed inset-0 rounded sm:h-[10%]  lg:flex sm:block justify-center items-center z-10 gap-3 bg-teal-100  border-t-4 border-teal-500 rounded-b text-teal-900 shadow-md" role="alert">
+            <div class="flex">
+                <div class="py-1"><svg class="fill-current h-6 w-6 text-teal-500 mr-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z" /></svg></div>
+                <div>
+                    <p class="font-bold">Success</p>
+                    <p class="text-sm">{message}.</p>
+                </div>
+            </div>
+        </div>
+    )
+
+
+}
 function Navbar() {
     const searchContainerRef = useRef(null);
     const [isOpen, setIsOpen] = useState(false);
@@ -59,7 +93,9 @@ function Navbar() {
     const [UserPassword, setUserPassword] = useState("");
     const [isAgreed, setIsAgreed] = useState(false);
     const [isotpVerified, setIsotpVerified] = useState(false);
-    // for search function
+
+
+    // for search function............................................................................
 
     useEffect(() => {
         const debouncedSearch = _.debounce(() => {
@@ -194,10 +230,25 @@ function Navbar() {
     // console.log(auth.currentUser.uid);
 
     // .....................................................................
-    //handle signup
+    //handle custom signup
+
+
+    const HandlePassword = (e) => {
+        // const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,}$/;
+        // if (regex.test(e.target.value)) {
+
+        setUserPassword(e.target.value);
+        // }
+    }
+
+    const [showPopup2, setShowPopup2] = useState(false);
+    const [showAlert2, setShowAlert2] = useState("");
+    const [showPopup3, setShowPopup3] = useState(false);
+    const [showAlert3, setShowAlert3] = useState("");
     const handleCustomSignUp = async (e) => {
         e.preventDefault();
-        console.log(UserEmail, UserName)
+        // console.log(UserEmail, UserName)
+        localStorage.setItem('userName', UserName)
         if (isAgreed) {
             console.log('Form submitted!');
             // Submit your form logic here
@@ -211,34 +262,30 @@ function Navbar() {
             // await user({
             //     displayName: UserName,
             // });
+            myNavigate("/")
+            setIsModalOpen(false)
+            setShowPopup3(true)
+            setTimeout(() => {
 
+                setShowPopup3(false)
+            }, 3000)
+            setShowAlert3("User registered successfully");
             console.log('User registered with name:', user.displayName);
             // User registered successfully, you can redirect them or show a success message
 
         } catch (error) {
+            console.log(error.message);
+            setTimeout(() => {
+
+                setShowPopup2(false)
+            }, 3000)
+
+            setShowPopup2(true)
             console.error('Error registering user:', error.message);
-            alert("password must be at least 6 characters long and contain at least one uppercase letter, one lowercase letter, and one number.");
+            setShowAlert2(error.message);
             // Handle errors here, such as showing an error message to the user
         }
-        // createUserWithEmailAndPassword(auth, UserEmail, UserPassword)
-        //     .then((userCredential) => {
-        //         // Signed up 
-        //         const user = userCredential.user;
-        //         // ...
-        //         console.log(user)
-        //         user.updateProfile({
-        //             displayName: UserName,
-        //         });
 
-        //     })
-        //     .catch((error) => {
-        //         const errorCode = error.code;
-        //         console.log(errorCode)
-        //         const errorMessage = error.message;
-        //         console.log(errorMessage)
-        //         // ..
-        //         // alert("password must be at least 6 characters long and contain at least one uppercase letter, one lowercase letter, and one number.");
-        //     });
     };
 
 
@@ -282,9 +329,7 @@ function Navbar() {
 
     };
 
-    useEffect((value, index) => {
 
-    })
     // ....................................................
     const [showPopup, setShowPopup] = useState(false);
     const handleSendOtp = async () => {
@@ -453,6 +498,15 @@ function Navbar() {
                 isOpen={showPopup}
 
             />
+            <CustomAlert2
+                message={showAlert2}
+                isOpen={showPopup2}
+            />
+
+            <CustomAlert3
+                message={showAlert3}
+                isOpen={showPopup3}
+            />
             <header className='h-25 bg-[#ffcc00] text-center w-full shadow-md content-center items-center self-center  bg-gradient-to-r from-[#ffcc00] to-[#efdf2f] '  >
                 <marquee behavior="scroll" direction="left" scrollamount="22" className='bg-[#fffb0028] text-center text-[#000000] text-xl'>
                     📣 Welcome to FoodDost ,grab limited offer 1000Rs  📣
@@ -540,9 +594,12 @@ function Navbar() {
 
                                         <div className="relative inline-block " onClick={() => toggleDropdown}>
                                             <button onClick={toggleDropdown} className="flex items-center focus:outline-none  font-semibold   ">
-                                                {/* <span><FaUserCircle className='text-3xl m-2' /> </span> */}
-                                                <img src={user?.photoURL} alt="Profile" className="w-10 h-10 rounded-full"></img>
-                                                <span>{user?.displayName}</span>
+                                                {
+                                                    user?.photoURL ?
+                                                        <img src={user?.photoURL} alt="Profile" className="w-10 h-10 rounded-full"></img>
+                                                        : <FaUserCircle className='text-3xl m-2 ' />
+                                                }
+                                                <span className="pl-2">{user?.displayName || localStorage.getItem('userName')}</span>
                                             </button>
                                             {isDropdownOpen && (
                                                 <div className="absolute right-0 mt-2 py-2 w-48 bg-white rounded-md shadow-xl z-20">
@@ -590,7 +647,7 @@ function Navbar() {
                                             <img src={user?.photoURL} alt="Profile" className="w-10 h-10 rounded-full"></img>
                                             : <FaUserCircle className='text-3xl m-2 ' />
                                     }
-                                    <span className="pl-2">{user?.displayName}</span>
+                                    <span className="pl-2">{user?.displayName || localStorage.getItem('userName')}</span>
                                 </button>
                                 {isDropdownOpen && (
                                     <div className="absolute right-0 mt-2 py-2 w-48 bg-white rounded-md shadow-xl z-20">
@@ -646,10 +703,10 @@ function Navbar() {
                                     <form className='flex flex-col gap-5'>
                                         <input className='border h-12 w-full rounded' type="text" placeholder='Full Name' required value={UserName} onChange={(e) => setUserName(e.target.value)} />
 
-                                        <input className='border  h-12 w-full rounded' type="text" placeholder='Email' required value={UserEmail} onChange={(e) => setUserEmail(e.target.value)} />
+                                        <input className='border  h-12 w-full rounded' type="email" placeholder='Email' required value={UserEmail} onChange={(e) => setUserEmail(e.target.value)} />
 
 
-                                        <input className='border  h-12 w-full rounded' type="password" placeholder='Password' required value={UserPassword} onChange={(e) => setUserPassword(e.target.value)} />
+                                        <input className='border  h-12 w-full rounded' type="password" placeholder='Password' required={true} value={UserPassword} onChange={HandlePassword} />
                                     </form>
 
                                 </div >

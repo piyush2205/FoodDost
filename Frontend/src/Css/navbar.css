@@ -52,6 +52,17 @@
        margin: auto;
 
      }
+     input[type="email"] {
+      color:  rgb(0, 0, 0);
+      font-size: 12px;
+      font-weight: 700;
+      padding-left: 30px;
+      align-items: center;
+      justify-content: center;
+      margin: auto;
+
+    }
+
 
      input[type="password"] {
       color:  rgb(0, 0, 0);
