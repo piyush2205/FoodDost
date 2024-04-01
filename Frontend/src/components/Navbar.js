@@ -592,7 +592,7 @@ function Navbar() {
                                     <>
 
 
-                                        <div className="relative items-center flex " onClick={() => toggleDropdown}>
+                                        <div className="relative items-center gap-2 flex " onClick={() => toggleDropdown}>
                                             <button onClick={toggleDropdown} className="flex items-center focus:outline-none  font-semibold   ">
                                                 {
                                                     user?.photoURL ?
