@@ -5,7 +5,7 @@ function LocationSection() {
 
     return (
         <>
-            <div className='bg-black w-screen   bg-cover  p-10  sm:h-[376px] sm:w-auto  md:w-auto lg:w-full '>
+            <div className='bg-black  bg-cover  p-10  sm:h-[376px] sm:w-[640px]  md:w-auto lg:w-full '>
                 <h1 className='font-semibold text-6xl antialiased text-center text-[#ffcc00] '> Found Your Food</h1>
                 <p className='font-semibold text-2xl antialiased text-center text-[#f4f3f0] '>Here you can find all the restaurants</p>
                 <div className='flex content-center place-content-center my-2.5 gap-4  '>

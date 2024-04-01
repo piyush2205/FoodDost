@@ -11,7 +11,7 @@ function SingleComponet() {
 
     useEffect(() => {
         const fetchdata = async () =>
-            await axios.get(`https://fooddost.onrender.com/foodapidata/singleData/${id}`).then((res) => {
+            await axios.get(`http://localhost:2223/foodapidata/singleData/${id}`).then((res) => {
 
                 setData(res.data)
             }).catch((err) => {
@@ -27,7 +27,7 @@ function SingleComponet() {
         <div >
             <Breadcrum />
             <section >
-                <div className='Image-gallary '   >
+                <div className='Image-gallary lg:w-[1240px] md:w-[700px] sm:w-[640px] m-auto  mt-10 mb-10   '   >
 
                     <div className='image-display-1   '>
                         {/* <img src={`${Img}`} className='img1' ></img> */}
@@ -40,8 +40,8 @@ function SingleComponet() {
                     <div className='image-display-4 '></div>
                 </div>
             </section>
-            <section className='mt-10 border-2'>
-                <div className=' w-[1240px] m-auto '>
+            <section className='mt-10 border-2  lg:w-[1240px] md:w-[700px] sm:w-[640px] m-auto    '>
+                <div className=' w-[1240px]  m-auto '>
                     <h1 className='font-semibold text-4xl antialiased mt-10 mb-10 '>
                         {AllData.name}
                     </h1>
@@ -102,7 +102,7 @@ function SingleComponet() {
                     </p>
 
 
-                    <div className='text-2xl'>
+                    <div className='lg:text-2xl md:text-xl sm:text-xs  m-auto'>
                         {
                             AllData.menu?.items?.map((el) =>
 

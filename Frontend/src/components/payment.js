@@ -30,9 +30,9 @@ function Payment() {
 
     return (
 
-        <div className='w-[1240px] m-auto flex px-2 py-2 border items-center align-center justify-around' >
+        <div className='lg:w-[1240px] md:w-[700px] sm:w-[640px] m-auto lg:flex  px-2 py-2 border items-center align-center justify-around' >
 
-            <div className='w-[500px] border p-2 flex flex-col  m-auto '>
+            <div className='lg:w-[500px] md:w-[300px] sm:w-[200px] border p-2 flex flex-col  m-auto '>
                 <form onSubmit={handleSubmit} className='flex flex-col align-center'>
                     <label>
                         Street:
@@ -58,8 +58,8 @@ function Payment() {
                 </form>
 
             </div>
-            <div className='w-[500px] p-2 flex flex-col     align-center m-auto '>
-                <h1 className='font-semibold text-center text-2xl'>Bill Details</h1>
+            <div className='lg:w-[500px] md:w-[300px] sm:w-[200px] p-2 flex flex-col     align-center m-auto '>
+                <h1 className='font-semibold text-center lg:text-4xl md:text-3xl sm:text-2xl'>Bill Details</h1>
                 <p className='font-semibold text-xl  ' >Item Total :&#8377;{TotalPrice}</p>
 
                 <p className='font-semibold text-xl  '>

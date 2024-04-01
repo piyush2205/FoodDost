@@ -1,14 +1,14 @@
 // import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { memo } from 'react';
 
 
-
-function CardComponent({ ...el }) {
+const CardComponent = memo(({ ...el }) => {
     // console.log(el)
     // console.log(props.match)
-    const { restaurantName } = el.name;
-    console.log(restaurantName)
+    // const { restaurantName } = el.name;
+    // console.log(restaurantName)
     const [resData, setresData] = useState([])
     const [menuData, setMenuData] = useState([])
 
@@ -63,6 +63,6 @@ function CardComponent({ ...el }) {
         </>
 
     )
-}
+})
 
 export default CardComponent

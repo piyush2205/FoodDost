@@ -1,24 +1,40 @@
 import React, { useEffect, useState } from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
-import OrderSection from "../components/OrderSection"
-import HeroSection from "../components/HeroSection"
+// import OrderSection from "../components/OrderSection"
+// import HeroSection from "../components/HeroSection"
 import LocationSection from '../components/LocationSection'
-import SingleComponet from '../components/SingleComponet'
+// import SingleComponet from '../components/SingleComponet'
 
 import Cart from '../components/CartContext'
-import Payment from '../components/payment'
+// import Payment from '../components/payment'
 import { useUserAuth } from '../components/UserAuthContext'
-import CartPage from '../components/CartPage'
-import Menu from '../components/Menu'
+// import CartPage from '../components/CartPage'
+// import Menu from '../components/Menu'
 import { lazy, Suspense } from 'react'
 import Animation from '../Assets/Animation.gif'
-import Navbar from '../components/Navbar'
+import UserProfilePage from '../components/UserProfilePage'
+import UserSettings from '../components/UserSettings'
+// import OTPPage from '../components/Sendotp'
+// import Navbar from '../components/Navbar'
+
+
+//lazy loading
+const OrderSection = lazy(() => import('../components/OrderSection'))
+const HeroSection = lazy(() => import('../components/HeroSection'))
+const SingleComponet = lazy(() => import('../components/SingleComponet'))
+// const Login = lazy(() => import('../components/Login'))
+const Menu = lazy(() => import('../components/Menu'))
+const Payment = lazy(() => import('../components/payment'))
+const CartPage = lazy(() => import('../components/CartPage'))
+const Navbar = lazy(() => import('../components/Navbar'))
+const Footer = lazy(() => import('../components/Footer'))
+
 
 const PopupAlert = ({ isOpen, onClose, message }) => {
     if (!isOpen) return null;
 
     return (
-        <div className="bg-red-100 border backdrop-blur-sm w-[50%] h-[50%] m-[auto] fixed inset-0 border-red-400 bg-opacity-90 text-red-700 px-4 py-3 rounded  flex justify-center items-center" role="alert">
+        <div className=" sm:w-[50%] bg-red-100 border backdrop-blur-sm w-[50%] h-[50%] m-[auto] fixed inset-0 border-red-400 bg-opacity-90 text-red-700 px-4 py-3 rounded sm:h-[30%]  lg:flex sm:block justify-center items-center" role="alert">
             <strong className="font-bold text-2xl m-2">Namaste!</strong>
             <span className="block sm:inline text-2xl m-2">{message}</span>
             <span className="absolute top-0 bottom-0 right-0 px-4 py-3">
@@ -75,6 +91,18 @@ function AllRouter() {
                             <Payment />
                         </ProtectedRoute>
                     } />
+
+                    <Route path='/profile' element={
+                        <ProtectedRoute>
+                            <UserProfilePage />
+                        </ProtectedRoute>
+
+                    } />
+                    <Route path='/settings' element={
+                        <ProtectedRoute>
+                            <UserSettings /></ProtectedRoute>}
+                    />
+
                     {/* <Route path="/login" element={<HeroSection />} > */}
 
                     {/* </Route> */}
@@ -95,8 +123,8 @@ function AllRouter() {
                             <footer />
                         </>
                     } />
-                </Routes>
-            </Suspense>
+                </Routes >
+            </Suspense >
 
         </>
 

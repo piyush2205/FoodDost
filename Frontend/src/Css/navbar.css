@@ -6,6 +6,7 @@
     width: 100%;
     height: 100%;
     backdrop-filter: blur(5px) saturate(180%);
+    overflow: auto;
   }
 
   .modal-content {
@@ -35,33 +36,161 @@
   ::placeholder{
     font-size: 16px;
     font-weight: 600;
-    padding: 10px;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+  
   }
+     input[type="text"] {
+       color:  rgb(0, 0, 0);
+       font-size: 12px;
+       font-weight: 700;
+       padding-left: 30px;
+       align-items: center;
+       justify-content: center;
+       margin: auto;
 
+     }
+
+     input[type="password"] {
+      color:  rgb(0, 0, 0);
+      font-size: 12px;
+      font-weight: 700;
+      padding-left: 30px;
+      align-items: center;
+      justify-content: center;
+      margin: auto;
+
+    }
   .cart-span{
      font-weight: 700;
      font-size: 11px;
-    transform: translate(5px, -19px);
-    -webkit-transform:  translate(5px, -19px);
+    transform: translate(-4px, -19px);
+    /* -webkit-transform:  translate(5px, -19px);
     -moz-transform:  translate(5px, -19px);
     -ms-transform:  translate(5px, -19px);
-    -o-transform:  translate(5px, -19px);
+    -o-transform:  translate(5px, -19px); */
 }
 .cart-svg{
 fill: transparent;
 }
 
 /* Responsive styles */
-@media only screen and (max-width: 768px) {
-  .modal-content {
-      width: 70%; /* Adjust the width for smaller screens */
+@media only screen and (min-width: 768px) {
+ 
+  /* .my-navigation-login-singup{
+    display: block;
+ } */
+ .my-class-ul-login-signup{
+  display: flex;  
+}
+  ::placeholder {
+      font-size: 12px;
   }
-  
+}
+
+@media screen and (max-width: 680px) {
+  .modal-content{
+    width: 100%;
+    padding: 20px;
+  }
+  .my-girdData-container{
+    padding: 20px;
+}
+  .my-navbar-container{
+    padding:20px ;
+  }
+  .my-navigation-login-singup{
+    display: none;
+ }
+ .mobile-menu-humburger{
+  display: block
+}
+ .my-class-ul-login-signup{
+        display: flex;  
+ }
+ .search_input ,.search_icons{
+       display: none;
+ }
+ .my-class-Navbar-div{
+  padding: 20px;
+}
+
+  ::placeholder {
+     
+      font-size: 12px;
+  }
+  .my-class-ul-login-signup{
+    display: flex;  
+  }
 }
 
 @media only screen and (max-width: 480px) {
-  .modal-content {
-      width: 90%; /* Further adjust the width for even smaller screens */
+  .modal{
+    padding: 30px;
   }
- 
+  .modal-content{
+    width: 100%;
+    padding: 20px;
+  }
+  .my-girdData-container{
+    padding: 20px;
+}
+.my-class-Navbar-div{
+        padding: 20px;
+}
+  .my-girdData-container{
+       padding: 20px;
+  }
+  .my-navbar-container{
+    padding:20px ;
+  }
+  .my-navigation-login-singup{
+    display: block;
+ } 
+ .my-class-ul-login-signup{
+  display: flex;  
+}
+ .my-navigation-login-singup {
+  display: none;
+}
+.mobile-menu-humburger{
+  display: block
+}
+.search_input{
+  display: none;
+}
+  ::placeholder {
+     
+      font-size: 10px;
+  }
+}
+
+@media screen   and (max-width: 360px) {
+.modal{
+  padding: 30px;
+}
+  .modal-content{
+    width: 100%;
+    padding: 20px;
+  }
+  .my-class-Navbar-div{
+    padding: 20px;
+}
+  .my-girdData-container{
+    padding: 20px;
+}
+  .my-navbar-container{
+    padding:20px ;
+  }
+  .search_input{
+    display: none;
+  }
+  .my-navigation-login-singup{
+      display: none;
+   }
+   .my-class-ul-login-signup{
+    display: flex;  
+  }
 }

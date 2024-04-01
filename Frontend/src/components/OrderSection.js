@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
-// import pizza from "../Assets/pizza.jpg"
-// import burger from "../Assets/burger.jpg"
+import React, { useCallback, useEffect, useState } from 'react'
+import pizza from "../Assets/pizza.jpg"
+import burger from "../Assets/burger.jpg"
 import "../Css/Swiper.css"
 import axios from "axios"
 import CardComponent from './cardComponent'
@@ -16,7 +16,7 @@ function OrderSection() {
     const [loading, setLoading] = useState(false)
     const handleApiCall = async () => {
         setLoading(false)
-        axios.get(`https://fooddost.onrender.com/foodapidata`).then((res) => {
+        axios.get(`http://localhost:2223/foodapidata`).then((res) => {
             // console.log(res.data)
 
             SetFoodData(res.data)
@@ -27,9 +27,9 @@ function OrderSection() {
         })
     }
     useEffect(() => {
-        window.scrollTo(0, 0);
+        // window.scrollTo(0, 0);
         handleApiCall()
-        console.log(foodData)
+        // console.log(foodData)
     }, [])
 
 
@@ -80,13 +80,13 @@ function OrderSection() {
 
                 &#10095;
 
-            </div> */}
-            {/* <div className='w-full ' >
+            </div>
+            <div className='w-full ' >
                 <div className='w-[1240px] m-auto'>
                     <h1 className='font-semibold text-4xl antialiased  mt-10 mb-10 '>Top Restaurant</h1>
-                    <LiaArrowCircleLeftSolid onClick={handlePrev} />
+                    <LiaArrowCircleLeftSolid />
                     <div className='border-2 w-full  overflow-hidden m-auto flex h-64 '>
-                        <button onClick={handlePrev} >prev</button>
+                        <button  >prev</button>
                         {foodData.map((foodData, i) =>
 
                             <div key={i} className='m-10  h-fit border-2 w-[300px] h-auto carousel '>
@@ -102,18 +102,18 @@ function OrderSection() {
 
 
                         )}
-                        <button onClick={handleNext} >next </button>
+                        <button  >next </button>
                     </div>
-                    <LiaArrowCircleRightSolid onClick={handleNext} />
+                    <LiaArrowCircleRightSolid />
                 </div>
 
             </div> */}
 
 
             <Breadcrum />
-            <div className='border-b m-auto lg:w-[1240px] md:w-[1240px] sm:w-80 '>
+            <div className=' my-girdData-container border-b m-auto lg:w-[1240px] md:w-[760px] sm:w-80  sm:p-5'>
 
-                <div className=' flex    m-2 gap-2'>
+                <div className=' flex flex-wrap py-4 gap-2'>
 
 
                     <button onClick={handleRating} className="rounded-[50px] bg-yellow-300 px-3.5 py-2.5 text-sm font-semibold text-black shadow-sm hover:bg-yellow-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 " >Ratings 4.0+</button>
@@ -125,12 +125,12 @@ function OrderSection() {
 
             </div>
             {
-                loading ? <div className="flex min-h-screen items-center justify-center lg:w-[1240px] md:w-[1240px] sm:w-80 m-[auto]">
+                loading ? <div className="flex my-girdData-container  min-h-screen items-center justify-center lg:w-[1240px] md:w-[760px] sm:w-[640px] m-[auto] sm:p-10 md:p-10 lg:py-10 ">
 
                     {isFilterEmpty ? (
                         <p><p>No items available based on the current filter.</p></p>
                     ) : (
-                        <div className="grid  sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4 sm:gap-4 lg:gap-4  " >
+                        <div className="grid  sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-4 lg:gap-4  " >
                             {foodData.map((el, i) => {
                                 return <CardComponent {...el} key={i} />;
                             })}

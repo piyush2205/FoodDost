@@ -12,7 +12,7 @@ function Menu() {
     window.scroll(0, 0)
     useEffect(() => {
         const fetchdata = async () =>
-            await axios.get(`https://fooddost.onrender.com/foodapidata/singleData/${id}`).then((res) => {
+            await axios.get(`http://localhost:2223/foodapidata/singleData/${id}`).then((res) => {
 
                 setData(res.data)
             }).catch((err) => {
@@ -46,7 +46,7 @@ function Menu() {
     return (
 
         <section className='mt-10 '>
-            <div className=' w-[1240px] m-auto '>
+            <div className=' lg:w-[1240px] md:w-[700px] sm:w-[640px] m-auto '>
                 <Breadcrum />
                 <h1 className='font-semibold text-4xl antialiased mt-10 mb-10 '>
                     MENU
@@ -57,18 +57,18 @@ function Menu() {
                         <option value="3">Desserts</option>
                     </select> */}
                 </h1>
-                <h1 className='font-semibold text-4xl antialiased mt-10 mb-10 '>
+                <h1 className='font-semibold lg:text-4xl md:text-3xl sm:text-2xl antialiased mt-10 mb-10 '>
                     {AllData.name}
                 </h1>
-                <p className="text-2xl antialiased font-semibold py-2">
+                <p className=" lg:text-2xl md:text-xl sm:text-xs antialiased font-semibold py-2">
                     {AllData.foodCategory && (AllData.foodCategory).join(",")}
                 </p>
 
                 {AllData.menu?.items.map((el, i) => {
                     return (
                         <>
-                            <div className="flex justify-between  border-b py-4 " key={i}>
-                                <p className="text-2xl antialiased">
+                            <div className="lg:flex lg:flex-row md:flex-row sm:flex-col  justify-between  lg:w-[1240px] md:w-[768px] sm:w-[640px] border-b py-4 " key={i}>
+                                <p className="lg:text-2xl md:text-xl sm:text-xs antialiased">
                                     {el.name} - &#8377;{el.price}
                                 </p>
                                 <div className="flex gap-5 mt-5 " >
@@ -87,7 +87,7 @@ function Menu() {
                     )
                 })},
 
-                <div className='flex border-t  p-2 content-center items-center justify-between mt-10'>
+                <div className='flex  border-t  p-2 content-center   items-center lg:justify-between md:justify-between sm:justify-start mt-10'>
                     <h1 className="text-xl antialiased " >Total price : &#8377;{AllData.menu?.items.reduce((acc, el) => acc + (quantities[el.itemId]?.quantity || 0) * el.price, 0)}</h1>
                     <button>
                         <Link to="/payment">
