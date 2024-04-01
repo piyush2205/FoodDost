@@ -4,15 +4,16 @@ const express = require('express');
 const cors = require("cors")
 const app = express()
 app.use(express.json())
-app.use(cors(
-    //     {
-    //     origin: ["https://food-dost.vercel.app"],
-    //     methods: ["GET", "POST", "PUT", "DELETE"],
-    //     // allowedHeaders: ["Content-Type"],
-    //     credentials: true
+// app.use(cors(
+//         {
+//         origin: ["https://food-dost.vercel.app"],
+//         methods: ["GET", "POST", "PUT", "DELETE"],
+//         // allowedHeaders: ["Content-Type"],
+//         credentials: true
 
-    // }
-))
+//     }
+// ))
+app.use(cors())
 require("dotenv").config()
 
 
@@ -30,7 +31,7 @@ const connection = async () => {
 }
 
 app.get('/', (req, res) => {
-    res.send('Hello Worldd!')
+    res.send('Hello Worlddd!')
 })
 
 app.post('/addFoodandRes/restaurants', async (req, res) => {

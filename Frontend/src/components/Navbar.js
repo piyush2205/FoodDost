@@ -116,7 +116,7 @@ function Navbar() {
 
     const fetchResults = async () => {
         try {
-            const response = await axios.get(`http://localhost:2223/foodapidata/search?q=${encodeURIComponent(searchTerm)}`);
+            const response = await axios.get(`https://fooddost.onrender.com/foodapidata/search?q=${encodeURIComponent(searchTerm)}`);
             setResults(response.data);
             setShowResults(true);
         } catch (error) {
