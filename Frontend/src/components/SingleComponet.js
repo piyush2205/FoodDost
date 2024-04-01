@@ -11,7 +11,7 @@ function SingleComponet() {
 
     useEffect(() => {
         const fetchdata = async () =>
-            await axios.get(`https://food-dost.vercel.app/foodapidata/singleData/${id}`).then((res) => {
+            await axios.get(`https://fooddost.onrender.com/foodapidata/singleData/${id}`).then((res) => {
 
                 setData(res.data)
             }).catch((err) => {
