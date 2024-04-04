@@ -140,8 +140,9 @@ function OrderSection() {
                 </div> :
                     <>
                         <div className="flex min-h-screen items-center justify-center">
-                            <h1>wait for some time api is calling </h1>
+
                             <div className="w-1/3">
+                                <h1>wait for some time api is calling </h1>
                                 <div className="max-w-sm rounded overflow-hidden shadow-lg animate-pulse">
                                     <div className="h-48 bg-gray-300"></div>
                                     <div className="px-6 py-4">
