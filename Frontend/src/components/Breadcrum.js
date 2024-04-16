@@ -3,12 +3,12 @@ import { Link } from "react-router-dom"
 import { useLocation } from 'react-router-dom';
 import { convertSlugToTitle } from './Services/SlugServices';
 function Breadcrum() {
-    console.log(useLocation().pathname)
-    console.log(useLocation())
+    // console.log(useLocation().pathname)
+    // console.log(useLocation())
     const location = useLocation();
     const pathnames = location.pathname.split('/').filter(x => x);
     let breadcrumPath = '';
-    console.log(pathnames)
+    // console.log(pathnames)
     return (
         <div className='flex lg:w-[1240px] my-girdData-container md:w-[760px] m-auto text-[#ae9533] border px-2 py-2'   >
             <ol className='flex'>

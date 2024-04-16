@@ -56,7 +56,7 @@ const CardComponent = memo(({ ...el }) => {
                     <div className="inline-flex items-center rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-green-600/20"> 	&#8377;{el.priceRange} for one </div>
                     <div className="flex items-center justify-between py-2 mt-4">
                         <Link to={`/Gorakhpur/${el._id}`} className="rounded-md bg-yellow-300 px-3.5 py-2.5 text-sm font-semibold text-black shadow-sm hover:bg-yellow-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Order Now</Link>
-                        <Link to={`/Gorakhpur/SingleComponet/${el._id}`} className=" rounded-md text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-50 px-3.5 py-2.5 "> View All <span aria-hidden="true">→</span></Link>
+                        <Link to={`/Cart`} className=" rounded-md text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-50 px-3.5 py-2.5 "> Your Cart <span aria-hidden="true">→</span></Link>
                     </div>
                 </div>
             </div >

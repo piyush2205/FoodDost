@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { useCart } from './CartContext';
+import { useCart } from './Context/CartContext';
 import Breadcrum from './Breadcrum';
 
 function Menu() {

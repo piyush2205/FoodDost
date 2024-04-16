@@ -1,12 +1,12 @@
 import React from 'react'
-import { useCart } from './CartContext';
+import { useCart } from './Context/CartContext';
 import Breadcrum from './Breadcrum';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import emptyCart from "../Assets/empty-cart.jpeg"
 const CartPage = () => {
     const { quantities, totalItems, TotalPrice, removeFromCart, restaurantName } = useCart();
-    console.log(TotalPrice, quantities, totalItems, restaurantName)
+    // console.log(TotalPrice, quantities, totalItems, restaurantName)
     const handleDelete = (itemId) => {
         removeFromCart(itemId)
     }

@@ -71,7 +71,7 @@ export const CartProvider = ({ children }) => {
 
     useEffect(() => {
         // Save cart data and current restaurant ID to local storage whenever they change
-        console.log('Updating local storage:', { TotalPrice, quantities, currentRestaurantId, restaurantName });
+        // console.log('Updating local storage:', { TotalPrice, quantities, currentRestaurantId, restaurantName });
         localStorage.setItem('Price', JSON.stringify(TotalPrice));
         localStorage.setItem('restaurantName', JSON.stringify(restaurantName));
         localStorage.setItem('cart', JSON.stringify(quantities));
@@ -186,8 +186,8 @@ export const CartProvider = ({ children }) => {
     const totalItems = Object.values(quantities).reduce((acc, curr) => acc + curr.quantity, 0);
     // console.log(Object.values(quantities).reduce((acc, curr) => curr));
 
-    console.log(TotalPrice, "total price")
-    console.log(restaurantName, "restaurant name")
+    // console.log(TotalPrice, "total price")
+    // console.log(restaurantName, "restaurant name")
 
     // const totalItems = Object.values(quantities).reduce((acc, curr) => acc + curr.quantity, 0);
 

@@ -8,7 +8,7 @@ import { getAuth, signInWithPopup, } from "firebase/auth";
 import { FaUserCircle } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
 import { useUserAuth } from './UserAuthContext';
-import { useCart } from './CartContext';
+import { useCart } from './Context/CartContext';
 import { FaSearch } from "react-icons/fa";
 import axios from 'axios'
 import _ from 'lodash';
@@ -210,9 +210,9 @@ function Navbar() {
 
                 // The signed-in user info.
                 const user = result.user;
-                console.log(user)
+                // console.log(user)
                 const photoURL = user.photoURL;
-                console.log(photoURL)
+                // console.log(photoURL)
                 // IdP data available using getAdditionalUserInfo(result)
                 // ...
             }).catch((error) => {

@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react';
 import { Link } from 'react-router-dom'
 import "../Css/payment.css"
-import { useCart } from './CartContext';
+import { useCart } from './Context/CartContext';
 function Payment() {
     const { TotalPrice } = useCart();
 
@@ -30,7 +30,7 @@ function Payment() {
 
     return (
 
-        <div className='lg:w-[1240px] md:w-[700px] sm:w-[640px] m-auto lg:flex  px-2 py-2 border items-center align-center justify-around' >
+        <div className='lg:w-[1240px] md:w-[700px] sm:w-[640px] m-auto lg:flex  px-8 py-8 border items-center align-center justify-around' >
 
             <div className='lg:w-[500px] md:w-[300px] sm:w-[200px] border p-2 flex flex-col  m-auto '>
                 <form onSubmit={handleSubmit} className='flex flex-col align-center'>
