@@ -45,7 +45,7 @@ function Menu() {
 
     return (
 
-        <section className='mt-10 py-4 '>
+        <section className='mt-10 lg:p-0 md:p-3 sm:p-4 ' style={{ padding: "20px" }}>
             <div className=' lg:w-[1240px] md:w-[700px] sm:w-[640px] m-auto '>
                 <Breadcrum />
                 <h1 className='font-semibold text-4xl antialiased mt-10 mb-10 '>
