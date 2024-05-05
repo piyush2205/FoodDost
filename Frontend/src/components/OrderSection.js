@@ -59,6 +59,12 @@ function OrderSection() {
         setIsFilterEmpty(newFood.length === 0);
     };
 
+    const [timer, setTimer] = useState(60)
+    useEffect(() => {
+        setTimeout(() => {
+            setTimer(timer - 1)
+        }, 1000)
+    })
     return (
         <>
             <h1 className='font-semibold text-4xl sm:text-5xl block  antialiased text-center mt-10 mb-10 '>Best Food in Gorakhpur</h1>
@@ -142,7 +148,7 @@ function OrderSection() {
                         <div className="flex min-h-screen items-center justify-center">
 
                             <div className="w-1/3">
-                                <h1>wait for some time api is calling </h1>
+                                <h1 className=' text-sm text-black '>Wait for some time api is calling {timer} </h1>
                                 <div className="max-w-sm rounded overflow-hidden shadow-lg animate-pulse">
                                     <div className="h-48 bg-gray-300"></div>
                                     <div className="px-6 py-4">

@@ -1,10 +1,15 @@
 import React from 'react'
 import { useState } from 'react';
-import { Link } from 'react-router-dom'
+import { Link, Navigate, useNavigate } from 'react-router-dom'
 import "../Css/payment.css"
 import { useCart } from './Context/CartContext';
+import Animation1 from "../Assets/Animation-1.gif"
 function Payment() {
+    const navigate = useNavigate()
+
     const { TotalPrice } = useCart();
+
+    const [isOrder, setIsOrder] = useState(false)
 
     const [address, setAddress] = useState({
         street: '',
@@ -14,21 +19,34 @@ function Payment() {
     });
 
     const handleChange = (e) => {
+
         const { name, value } = e.target;
+
         setAddress((prevAddress) => ({
             ...prevAddress,
             [name]: value,
         }));
+
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
         setAddress({ street: '', city: '', postalCode: '', country: '' });
+        setTimeout(() => {
+            setIsOrder(true)
+
+        }, 1000)
+        setTimeout(() => {
+            navigate("/")
+        }, 7000)
         // Perform any necessary actions with the address data (e.g., submit to a server, update state, etc.)
         console.log('Submitted Address:', address);
     };
 
-    return (
+
+
+    return isOrder ? <div className='lg:w-[1240px] md:w-[700px] sm:w-[640px] m-auto lg:flex  px-8 py-8 border items-center align-center justify-around' >< img src={Animation1} className='h-[250px] w-[250px]' /></div> : (
+
 
         <div className='lg:w-[1240px] md:w-[700px] sm:w-[640px] m-auto lg:flex  px-8 py-8 border items-center align-center justify-around' >
 
@@ -36,17 +54,17 @@ function Payment() {
                 <form onSubmit={handleSubmit} className='flex flex-col align-center'>
                     <label>
                         Street:
-                        <input className='border' type="text" name="street" value={address.street} onChange={handleChange} />
+                        <input className='border' type="text" name="street" required value={address.street} onChange={handleChange} />
                     </label>
                     <br />
                     <label>
                         City:
-                        <input type="text" className='border' name="city" value={address.city} onChange={handleChange} />
+                        <input type="text" className='border' name="city" required value={address.city} onChange={handleChange} />
                     </label>
                     <br />
                     <label>
                         Postal Code:
-                        <input type="text" className='border' name="postalCode" value={address.postalCode} onChange={handleChange} />
+                        <input type="text" className='border' name="postalCode" required value={address.postalCode} onChange={handleChange} />
                     </label>
                     <br />
                     <label>
@@ -58,6 +76,9 @@ function Payment() {
                 </form>
 
             </div>
+
+
+
             <div className='lg:w-[500px] md:w-[300px] sm:w-[200px] p-2 flex flex-col     align-center m-auto '>
                 <h1 className='font-semibold text-center lg:text-4xl md:text-3xl sm:text-2xl'>Bill Details</h1>
                 <p className='font-semibold text-xl  ' >Item Total :&#8377;{TotalPrice}</p>
@@ -76,7 +97,7 @@ function Payment() {
 
             </div>
 
-        </div>
+        </div >
     );
 };
 
