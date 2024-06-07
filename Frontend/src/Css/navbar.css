@@ -32,7 +32,11 @@
   .close:hover {
     color: black;
   }
-   
+   a{
+    color:black ;
+    font-size: 16px;
+    font-weight:normal;
+   }
   ::placeholder{
     font-size: 16px;
     font-weight: 600;

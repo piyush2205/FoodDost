@@ -1,21 +1,24 @@
 import React, { useCallback, useEffect, useState } from 'react'
-import pizza from "../Assets/pizza.jpg"
-import burger from "../Assets/burger.jpg"
-import "../Css/Swiper.css"
+// import pizza from "../Assets/pizza.jpg"
+// import burger from "../Assets/burger.jpg"
+// import "../Css/Swiper.css"
 import axios from "axios"
 import CardComponent from './cardComponent'
 import { LiaArrowCircleLeftSolid } from "react-icons/lia";
 import { LiaArrowCircleRightSolid } from "react-icons/lia";
-import "../Css/OrderSection.css"
-import Breadcrum from './Breadcrum';
+// import "../Css/OrderSection.css"
+import Breadcrum from '../Breadcrum';
 
 function OrderSection() {
     const [isRating4PlusActive, setRating4PlusActive] = useState(false);
     const [isFilterEmpty, setIsFilterEmpty] = useState(false);
     const [foodData, SetFoodData] = useState([])
     const [loading, setLoading] = useState(false)
+
     const handleApiCall = async () => {
         setLoading(false)
+        // https://fooddost.onrender.com/foodapidata
+        // http://localhost:2223/foodapidata
         axios.get(`https://fooddost.onrender.com/foodapidata`).then((res) => {
             // console.log(res.data)
 
@@ -27,7 +30,7 @@ function OrderSection() {
         })
     }
     useEffect(() => {
-        // window.scrollTo(0, 0);
+        window.scrollTo(0, 0);
         handleApiCall()
         // console.log(foodData)
     }, [])
@@ -59,15 +62,16 @@ function OrderSection() {
         setIsFilterEmpty(newFood.length === 0);
     };
 
-    const [timer, setTimer] = useState(60)
-    useEffect(() => {
-        setTimeout(() => {
-            setTimer(timer - 1)
-        }, 1000)
-    })
+    // const [timer, setTimer] = useState(60)
+    // useEffect(() => {
+    //     setTimeout(() => {
+    //         setTimer(timer - 1)
+    //     }, 1000)
+    // })
     return (
         <>
-            <h1 className='font-semibold text-4xl sm:text-5xl block  antialiased text-center mt-10 mb-10 '>Best Food in Gorakhpur</h1>
+            <h1 className='font-semibold text-4xl sm:text-5xl block  antialiased text-center mt-10 mb-10 '>Best
+                <span className='text-[#ED4949]' > Food</span> in Your City</h1>
             {/* <div className='main-container'>
                 &#10094;
                 <div className='inner-conatiner' >
@@ -117,7 +121,7 @@ function OrderSection() {
 
 
             <Breadcrum />
-            <div className=' my-girdData-container border-b m-auto lg:w-[1240px] md:w-[760px] sm:w-80  sm:p-5'>
+            <div className='  border-b m-auto lg:w-[1080px] '>
 
                 <div className=' flex flex-wrap py-4 gap-2'>
 
@@ -131,12 +135,12 @@ function OrderSection() {
 
             </div>
             {
-                loading ? <div className="flex my-girdData-container  min-h-screen items-center justify-center lg:w-[1240px] md:w-[760px] sm:w-[640px] m-[auto] sm:p-10 md:p-10 lg:py-10 ">
+                loading ? <div className="flex  items-center justify-center lg:w-[1080px] m-[auto] ">
 
                     {isFilterEmpty ? (
                         <p><p>No items available based on the current filter.</p></p>
                     ) : (
-                        <div className="grid  sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-4 lg:gap-4  " >
+                        <div className="flex flex-wrap items-center justify-center gap-[15px] mt-[20px] mb-[100px] " >
                             {foodData.map((el, i) => {
                                 return <CardComponent {...el} key={i} />;
                             })}
@@ -148,7 +152,7 @@ function OrderSection() {
                         <div className="flex min-h-screen items-center justify-center">
 
                             <div className="w-1/3">
-                                <h1 className=' text-sm text-black '>Wait for some time api is calling {timer} </h1>
+
                                 <div className="max-w-sm rounded overflow-hidden shadow-lg animate-pulse">
                                     <div className="h-48 bg-gray-300"></div>
                                     <div className="px-6 py-4">

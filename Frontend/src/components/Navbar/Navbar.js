@@ -1,14 +1,14 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import logo from "../logo.png"
+import logo from "../../Assets/logo.png"
 import { Link, Navigate } from 'react-router-dom'
 import GoogleButton from 'react-google-button'
-import "../Css/navbar.css"
+import "../../Css/navbar.css"
 import { GoogleAuthProvider } from "firebase/auth";
 import { getAuth, signInWithPopup, } from "firebase/auth";
 import { FaUserCircle } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
-import { useUserAuth } from './UserAuthContext';
-import { useCart } from './Context/CartContext';
+import { useUserAuth } from '../UserAuthContext';
+import { useCart } from '../Context/CartContext';
 import { FaSearch } from "react-icons/fa";
 import axios from 'axios'
 import _ from 'lodash';
@@ -71,6 +71,11 @@ const CustomAlert3 = ({ message, isOpen, onClose, }) => {
 
 
 }
+
+// ...................................................................................................................................
+
+
+
 function Navbar() {
     const searchContainerRef = useRef(null);
     const [isOpen, setIsOpen] = useState(false);
@@ -485,7 +490,19 @@ function Navbar() {
     // setShowResults(false)
     // handleSearchClick()
     // })
+    const [scrolled, setScrolled] = useState(false);
 
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 50);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
 
     return (
 
@@ -507,22 +524,24 @@ function Navbar() {
                 message={showAlert3}
                 isOpen={showPopup3}
             />
-            <header className='h-25 bg-[#ffcc00] text-center w-full shadow-md content-center items-center self-center  bg-gradient-to-r from-[#ffcc00] to-[#efdf2f] '  >
-                <marquee behavior="scroll" direction="left" scrollamount="22" className='bg-[#fffb0028] text-center text-[#000000] text-xl'>
+            <header className={`h-25 text-center w-full shadow-sm content-center items-center self-center  transition-colors duration-300 `} >
+                {/* <marquee behavior="scroll" direction="left" scrollamount="22" className='bg-[#fffb0028] text-center text-[#000000] text-xl'>
                     📣 Welcome to FoodDost ,grab limited offer 1000Rs  📣
-                </marquee>
+                </marquee> */}
 
-                <div className='   lg:w-[1240px]  md:w-[768px] sm:w-[640px] sm:px-4  lg:px-0 md:px-0 flex items-center place-self-center justify-between  h-20  relative m-[auto] my-class-Navbar-div '  >
+
+
+                <div className='lg:w-[1080px]  md:w-[768px] sm:w-[640px] sm:px-4  lg:px-0 md:px-0 flex items-center place-self-center justify-between  h-20  relative m-[auto] my-class-Navbar-div '  >
                     <div className='items-center'>
-                        <Link to={"/"}>   <img src={logo} alt='logo' className='h-16 w-16' /> </Link>
+                        <Link to={"/"}>   <img src={logo} alt='logo' className='h-16 w-16  logo mt-[6px]' /> </Link>
                     </div>
 
                     {/* Search bar */}
                     <div >
                         <div className='relative flex items-center'>
                             <input placeholder='Search for restaurant,cusie or a dish' value={searchTerm} type="text"
-                                onChange={handleSearch} onClick={() => setShowResults(true)} className=' sm:h-10 sm:w-26  lg:h-10 lg:w-96 border border-gray-400 rounded-3xl p-1  search_input' />
-                            {<FaSearch className=' search_icons absolute top-[13px] bottom-[0px] right-[15px] ' />}
+                                onChange={handleSearch} onClick={() => setShowResults(true)} className=' sm:h-10 sm:w-26  lg:h-[40px] lg:w-[295px] border border-[#E0E0E0] rounded-lg p-1  search_input' />
+                            {/* {<FaSearch className=' search_icons absolute top-[13px] bottom-[0px] right-[15px] stroke-[#828282] ' />} */}
                         </div>
 
 
@@ -537,7 +556,7 @@ function Navbar() {
                                     <ul>
                                         {
                                             results.map((result) => (
-                                                <Link to={`Gorakhpur/${result._id}`}
+                                                <Link to={`Gorakhpur /${result._id}`}
                                                     onClick={handleSearchClick}
                                                 // Clear the search term on click
 
@@ -555,14 +574,14 @@ function Navbar() {
                                                             <p>Address: {result.restaurantAddress.street}</p>
                                                         </div>
                                                     </li>
-                                                </Link>
+                                                </Link >
                                             ))
                                         }
-                                    </ul>
+                                    </ul >
                                 }
-                            </div>
+                            </div >
                         }
-                    </div>
+                    </div >
                     {/* Search bar */}
 
                     {/* Responsive Navigation */}
@@ -579,64 +598,73 @@ function Navbar() {
                     {/*close mobile menu hamburger  */}
 
                     {/* Mobile Menu Dropdown */}
-                    {isMobileMenuOpen && (
-                        <div className=' absolute top-20 left-0 w-full bg-white shadow-md'>
-                            <ul className='flex flex-col items-center gap-4 py-4'>
-                                {/* Adjust your navigation links as needed */}
-                                <li>
-                                    <Link to='/'>Home</Link>
-                                </li>
+                    {
+                        isMobileMenuOpen && (
+                            <div className=' absolute top-20 left-0 w-full bg-white shadow-md'>
+                                <ul className='flex flex-col items-center gap-4 py-4'>
+                                    {/* Adjust your navigation links as needed */}
+                                    <li>
+                                        <Link to='/'>Home</Link>
+                                    </li>
 
-                                {user?.accessToken ?
+                                    {user?.accessToken ?
 
-                                    <>
+                                        <>
 
 
-                                        <div className="relative items-center gap-2 flex " onClick={() => toggleDropdown}>
-                                            <button onClick={toggleDropdown} className="flex items-center focus:outline-none  font-semibold   ">
-                                                {
-                                                    user?.photoURL ?
-                                                        <img src={user?.photoURL} alt="Profile" className="w-10 h-10 rounded-full"></img>
-                                                        : <FaUserCircle className='text-3xl m-2 ' />
-                                                }
-                                                <span className="pl-2">{user?.displayName || localStorage.getItem('userName')}</span>
-                                            </button>
+                                            <div className="relative items-center gap-2 flex " onClick={() => toggleDropdown}>
+                                                <button onClick={toggleDropdown} className="flex items-center focus:outline-none  font-semibold   ">
+                                                    {
+                                                        user?.photoURL ?
+                                                            <img src={user?.photoURL} alt="Profile" className="w-10 h-10 rounded-full"></img>
+                                                            : <FaUserCircle className='text-3xl m-2 ' />
+                                                    }
+                                                    <span className="pl-2">{user?.displayName || localStorage.getItem('userName')}</span>
+                                                </button>
+                                                <div className='relative flex content-center  items-center  cursor-pointer '  ><span className='cart-svg' style={{ strokeWidth: "2px", "stroke": "#282c3f", }} ><svg className="_1GTCc _2MSid" viewBox="-1 0 37 32" height="20" width="20" ><path d="M4.438 0l-2.598 5.11-1.84 26.124h34.909l-1.906-26.124-2.597-5.11z"></path></svg><span className=' absolute cart-span'>{totalItems}</span></span>
+                                                    <Link to={"/Cart"} className="block  py-2 px-2 font-semibold  cursor-pointer">Cart</Link></div>
+                                                {isDropdownOpen && (
+                                                    <div className="absolute right-0 mt-2 py-2 w-48 bg-white rounded-md shadow-xl z-20">
+                                                        <Link to={"/profile"} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profile</Link>
+                                                        <Link to={"/settings"} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Settings</Link>
+                                                        <Link onClick={customLogout} href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer">Logout</Link>
+                                                    </div>
+                                                )}
+                                            </div>
+                                        </>
+                                        :
+                                        < ul className='flex font-semibold gap-10 content-center items-center ' >
+
+                                            <li> <Link onClick={() => openModal('login')} className='cursor-pointer' >
+                                                Login
+                                            </Link></li>
+
+                                            <li> <Link onClick={() => openModal('signup')} className='cursor-pointer' >
+                                                Sign Up
+                                            </Link></li>
                                             <div className='relative flex content-center  items-center  cursor-pointer '  ><span className='cart-svg' style={{ strokeWidth: "2px", "stroke": "#282c3f", }} ><svg className="_1GTCc _2MSid" viewBox="-1 0 37 32" height="20" width="20" ><path d="M4.438 0l-2.598 5.11-1.84 26.124h34.909l-1.906-26.124-2.597-5.11z"></path></svg><span className=' absolute cart-span'>{totalItems}</span></span>
                                                 <Link to={"/Cart"} className="block  py-2 px-2 font-semibold  cursor-pointer">Cart</Link></div>
-                                            {isDropdownOpen && (
-                                                <div className="absolute right-0 mt-2 py-2 w-48 bg-white rounded-md shadow-xl z-20">
-                                                    <Link to={"/profile"} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profile</Link>
-                                                    <Link to={"/settings"} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Settings</Link>
-                                                    <Link onClick={customLogout} href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer">Logout</Link>
-                                                </div>
-                                            )}
-                                        </div>
-                                    </>
-                                    :
-                                    < ul className='flex font-semibold gap-10 content-center items-center ' >
-
-                                        <li> <Link onClick={() => openModal('login')} className='cursor-pointer' >
-                                            Login
-                                        </Link></li>
-
-                                        <li> <Link onClick={() => openModal('signup')} className='cursor-pointer' >
-                                            Sign Up
-                                        </Link></li>
-                                        <div className='relative flex content-center  items-center  cursor-pointer '  ><span className='cart-svg' style={{ strokeWidth: "2px", "stroke": "#282c3f", }} ><svg className="_1GTCc _2MSid" viewBox="-1 0 37 32" height="20" width="20" ><path d="M4.438 0l-2.598 5.11-1.84 26.124h34.909l-1.906-26.124-2.597-5.11z"></path></svg><span className=' absolute cart-span'>{totalItems}</span></span>
-                                            <Link to={"/Cart"} className="block  py-2 px-2 font-semibold  cursor-pointer">Cart</Link></div>
-                                    </ul>
+                                        </ul>
 
 
-                                }
-                            </ul>
-                        </div>
-                    )}
+                                    }
+                                </ul>
+                            </div>
+                        )
+                    }
 
                     {/* close mobile menu dropdown */}
 
-                    {/* User label and Navigation */}
-                    <div className='items-center flex gap-2 my-navigation-login-singup  ' >
 
+
+                    {/* desktop nav */}
+                    {/* User label and Navigation */}
+                    <div className='items-center flex gap-6 my-navigation-login-singup  ' >
+                        <div className='relative lg:flex lg:content-center lg:justify-center lg:items-center ml-10  '>
+                            <Link to={"/Cart"} className="flex items-center gap-2  py-2 px-2   cursor-pointer ">
+                                <span className='cart-svg' style={{ strokeWidth: "2px", "stroke": "#282c3f", }} ><svg className="_1GTCc _2MSid" viewBox="-1 0 37 32" height="20" width="20" ><path d="M4.438 0l-2.598 5.11-1.84 26.124h34.909l-1.906-26.124-2.597-5.11z"></path></svg><span className=' absolute cart-span'>{totalItems}</span></span>
+                                Cart</Link>
+                        </div>
                         {user?.accessToken ?
 
 
@@ -663,22 +691,19 @@ function Navbar() {
                             :
                             < ul className='lg:flex lg:font-semibold gap-10 md:flex sm:flex content-center items-center  my-class-ul-login-signup ' >
 
-                                <li> <Link onClick={() => openModal('login')} >
-                                    Login
+                                <li> <Link onClick={() => openModal('signup')}   >
+                                    Sign Up
                                 </Link></li>
 
-                                <li> <Link onClick={() => openModal('signup')} >
-                                    Sign Up
+                                <li className='h-39 w-97 px-8  py-2 rounded-full ' style={{ backgroundColor: 'rgba(237, 73, 73, 0.6)' }}> <Link onClick={() => openModal('login')} >
+
+                                    Login
                                 </Link></li>
                             </ul>
 
 
                         }
-                        <div className='relative lg:flex lg:content-center lg:justify-center lg:items-center ml-10  '>
-                            <Link to={"/Cart"} className="flex items-center gap-2  py-2 px-2 font-semibold  cursor-pointer ">
-                                <span className='cart-svg' style={{ strokeWidth: "2px", "stroke": "#282c3f", }} ><svg className="_1GTCc _2MSid" viewBox="-1 0 37 32" height="20" width="20" ><path d="M4.438 0l-2.598 5.11-1.84 26.124h34.909l-1.906-26.124-2.597-5.11z"></path></svg><span className=' absolute cart-span'>{totalItems}</span></span>
-                                Cart</Link>
-                        </div>
+
 
 
 
@@ -686,114 +711,116 @@ function Navbar() {
                 </div >
 
                 {/* Sign Up and Login Modal */}
-                {isModalOpen && (
-                    <>
-                        {modalMode === "signup" ? (<div className='modal'>
+                {
+                    isModalOpen && (
+                        <>
+                            {modalMode === "signup" ? (<div className='modal'>
 
 
 
 
-                            <div className='modal-content flex flex-col gap-10  ' >
-                                <div>
-                                    <span itle="Close" className='close' onClick={closeModal}>&times;</span>
-                                    <h2 className='font-semibold text-3xl antialiased  '>{modalMode ? "Sign Up" : "Login"}</h2>
-                                </div>
-                                {
-                                    modalMode ? <p className='text-lg font-semibold'>Enter your details to register</p> : <p className='text-lg font-semibold'>Enter your details to Login</p>
-                                }
-                                <div className='border flex flex-col p-1'>
-                                    <form className='flex flex-col gap-5'>
-                                        <input className='border h-12 w-full rounded' type="text" placeholder='Full Name' required value={UserName} onChange={(e) => setUserName(e.target.value)} />
+                                <div className='modal-content flex flex-col gap-10  ' >
+                                    <div>
+                                        <span itle="Close" className='close' onClick={closeModal}>&times;</span>
+                                        <h2 className='font-semibold text-3xl antialiased  '>{modalMode ? "Sign Up" : "Login"}</h2>
+                                    </div>
+                                    {
+                                        modalMode ? <p className='text-lg font-semibold'>Enter your details to register</p> : <p className='text-lg font-semibold'>Enter your details to Login</p>
+                                    }
+                                    <div className='border flex flex-col p-1'>
+                                        <form className='flex flex-col gap-5'>
+                                            <input className='border h-12 w-full rounded' type="text" placeholder='Full Name' required value={UserName} onChange={(e) => setUserName(e.target.value)} />
 
-                                        <input className='border  h-12 w-full rounded' type="email" placeholder='Email' required value={UserEmail} onChange={(e) => setUserEmail(e.target.value)} />
-
-
-                                        <input className='border  h-12 w-full rounded' type="password" placeholder='Password' required={true} value={UserPassword} onChange={HandlePassword} />
-                                    </form>
-
-                                </div >
+                                            <input className='border  h-12 w-full rounded' type="email" placeholder='Email' required value={UserEmail} onChange={(e) => setUserEmail(e.target.value)} />
 
 
-                                <div className=' border flex gap-5 items-center p-2' >
-                                    < input type='checkbox' checked={isAgreed}
-                                        onChange={handleCheckboxChange} className='h-5 w-5 ' />
-                                    <p className='text-[12px] tracking-wide'>I agree to Food Dost
-                                        <span className='text-[#ff006a] font-semibold'> Terms of Service,</span>  Privacy Policy and <span className='text-[#ff0051] font-semibold'>Content Policies </span > </p>
+                                            <input className='border  h-12 w-full rounded' type="password" placeholder='Password' required={true} value={UserPassword} onChange={HandlePassword} />
+                                        </form>
 
-                                </div>
-                                <button role='button' aria-disabled="true" className=' hover:bg-[#f1ca30]  disabled:bg-[#ffcc0074]  bg-[#ffcc00] h-12 w-full text-center rounded text-[18px] font-semibold  cursor-pointer' type='submit' disabled={!isAgreed} onClick={handleCustomSignUp} content='Create Account' name='Create Account'>Create Account</button>
+                                    </div >
 
-                                <div className='flex items-center relative'>
-                                    <hr className='border w-full' /> <span className='absolute left-[50%] translate-x-[-50%] from-neutral-800 text-[18px]'>or</span >
-                                </div >
 
-                                <GoogleButton type='dark' style={{ width: "100%" }} onClick={handleGoogleSignIn} />
-                                <div>
-                                    Already have an account? <Link to={"/"} onClick={() => openModal('Signup')} className='text-[#ff006a]'>Log in</Link>
-                                </div>
-                            </div>
+                                    <div className=' border flex gap-5 items-center p-2' >
+                                        < input type='checkbox' checked={isAgreed}
+                                            onChange={handleCheckboxChange} className='h-5 w-5 ' />
+                                        <p className='text-[12px] tracking-wide'>I agree to Food Dost
+                                            <span className='text-[#ff006a] font-semibold'> Terms of Service,</span>  Privacy Policy and <span className='text-[#ff0051] font-semibold'>Content Policies </span > </p>
 
-                        </div>) : (<div className='modal'>
-                            <div className='modal-content flex flex-col gap-10  ' >
-                                <div>
-                                    <span itle="Close" className='close' onClick={closeModal}>&times;</span>
-                                    <h2 className='font-semibold text-3xl antialiased  '>Login</h2>
+                                    </div>
+                                    <button role='button' aria-disabled="true" className=' hover:bg-[#f1ca30]  disabled:bg-[#ffcc0074]  bg-[#ffcc00] h-12 w-full text-center rounded text-[18px] font-semibold  cursor-pointer' type='submit' disabled={!isAgreed} onClick={handleCustomSignUp} content='Create Account' name='Create Account'>Create Account</button>
+
+                                    <div className='flex items-center relative'>
+                                        <hr className='border w-full' /> <span className='absolute left-[50%] translate-x-[-50%] from-neutral-800 text-[18px]'>or</span >
+                                    </div >
+
+                                    <GoogleButton type='dark' style={{ width: "100%" }} onClick={handleGoogleSignIn} />
+                                    <div>
+                                        Already have an account? <Link to={"/"} onClick={() => openModal('Signup')} className='text-[#ff006a]'>Log in</Link>
+                                    </div>
                                 </div>
 
+                            </div>) : (<div className='modal'>
+                                <div className='modal-content flex flex-col gap-10  ' >
+                                    <div>
+                                        <span itle="Close" className='close' onClick={closeModal}>&times;</span>
+                                        <h2 className='font-semibold text-3xl antialiased  '>Login</h2>
+                                    </div>
 
-                                {/* OTP Input */}
-                                {isOtpSent ?
-                                    <>
-                                        <div className='border flex justify-between flex-row p-1'>
-                                            <h2>Enter OTP</h2>
-                                            <Link onClick={() => setIsOtpSent(false)} >Back</Link>
-                                        </div>
 
-                                        <div className="otp-input flex  flex-row gap-2">
-                                            {otp.map((digit, index) => (
-                                                <input
-                                                    className='border h-12 w-full rounded text-center'
-                                                    key={index}
-                                                    ref={(el) => (otpInputRefs.current[index] = el)} // Create ref for each OTP input field
-                                                    type="text"
-                                                    inputMode="numeric"
-                                                    pattern="\d*"
-                                                    maxLength="1"
-                                                    value={digit}
-                                                    onChange={(e) => handleOtpChange(index, e.target.value)}
-                                                />
-                                            ))}
-                                        </div>
-                                        <button onClick={handleVerifyOtp} className='bg-[#ffcc00cf]  hover:bg-[#ffcc00] h-12 w-full text-center rounded text-[18px] font-semibold  cursor-pointer' >Verify OTP</button></> : <>
-                                        <div className='border flex flex-col p-1'>
-                                            <form className='flex flex-col gap-5'>
-                                                <input className='border h-12 w-full rounded' type="text" placeholder='Phone' required={true} value={phoneNumber} onChange={handlePhoneNumberChange} />
+                                    {/* OTP Input */}
+                                    {isOtpSent ?
+                                        <>
+                                            <div className='border flex justify-between flex-row p-1'>
+                                                <h2>Enter OTP</h2>
+                                                <Link onClick={() => setIsOtpSent(false)} >Back</Link>
+                                            </div>
 
-                                            </form>
+                                            <div className="otp-input flex  flex-row gap-2">
+                                                {otp.map((digit, index) => (
+                                                    <input
+                                                        className='border h-12 w-full rounded text-center'
+                                                        key={index}
+                                                        ref={(el) => (otpInputRefs.current[index] = el)} // Create ref for each OTP input field
+                                                        type="text"
+                                                        inputMode="numeric"
+                                                        pattern="\d*"
+                                                        maxLength="1"
+                                                        value={digit}
+                                                        onChange={(e) => handleOtpChange(index, e.target.value)}
+                                                    />
+                                                ))}
+                                            </div>
+                                            <button onClick={handleVerifyOtp} className='bg-[#ffcc00cf]  hover:bg-[#ffcc00] h-12 w-full text-center rounded text-[18px] font-semibold  cursor-pointer' >Verify OTP</button></> : <>
+                                            <div className='border flex flex-col p-1'>
+                                                <form className='flex flex-col gap-5'>
+                                                    <input className='border h-12 w-full rounded' type="text" placeholder='Phone' required={true} value={phoneNumber} onChange={handlePhoneNumberChange} />
 
-                                        </div >
+                                                </form>
 
-                                        <button role='button' aria-disabled="true" className='bg-[#ffcc00cf]  hover:bg-[#ffcc00] h-12 w-full text-center rounded text-[18px] font-semibold disabled:bg-[#ffcc0074]  cursor-pointer' content='Create Account' name='Create Account' disabled={!phoneNumber} onClick={handleSendOtp} >Send OTP</button> </>
+                                            </div >
 
-                                }
-                                <div className='flex items-center relative'>
-                                    <hr className='border w-full' /> <span className='absolute left-[50%] translate-x-[-50%] from-neutral-800 text-[18px]'>or</span >
-                                </div >
+                                            <button role='button' aria-disabled="true" className='bg-[#ffcc00cf]  hover:bg-[#ffcc00] h-12 w-full text-center rounded text-[18px] font-semibold disabled:bg-[#ffcc0074]  cursor-pointer' content='Create Account' name='Create Account' disabled={!phoneNumber} onClick={handleSendOtp} >Send OTP</button> </>
 
-                                <GoogleButton type='dark' style={{ width: "100%" }} onClick={handleGoogleSignIn} />
-                                <div>
-                                    Don't have an account?{' '}
-                                    <span className='text-[#ff006a] cursor-pointer' onClick={() => setModalMode('signup')}>
-                                        Sign up
-                                    </span>
+                                    }
+                                    <div className='flex items-center relative'>
+                                        <hr className='border w-full' /> <span className='absolute left-[50%] translate-x-[-50%] from-neutral-800 text-[18px]'>or</span >
+                                    </div >
+
+                                    <GoogleButton type='dark' style={{ width: "100%" }} onClick={handleGoogleSignIn} />
+                                    <div>
+                                        Don't have an account?{' '}
+                                        <span className='text-[#ff006a] cursor-pointer' onClick={() => setModalMode('signup')}>
+                                            Sign up
+                                        </span>
+                                    </div>
                                 </div>
-                            </div>
 
-                        </div>)}
-                    </>
+                            </div>)}
+                        </>
 
 
-                )}
+                    )
+                }
 
 
             </header >
