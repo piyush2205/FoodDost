@@ -64,12 +64,8 @@ function HeroSection() {
                 <div className='w-[1080px] section-2-mobile '>
                     <h1 className='font-semibold text-6xl antialiased text-center heading-main-section-2-mobile '> <span className='text-[#ED4949]'>Popular</span> Categories</h1>
                     <p className='font-semibold text-2xl antialiased text-center mt-4  sub-heading-section-2-mobile  '>Explore Our Most <span className='text-[#ED4949]'>Loved</span> Cuisines</p>
-                    <div className='circle-layout' style={{ backgroundColor: "rgba(75, 46, 43, 0.16)" }}>
-                        {/* <img src={imgCategory} className='h-[150px]' />
-                        <img src={imgCategory} className='h-[150px]' />
-                        <img src={imgCategory} className='h-[150px]' />
-                        <img src={imgCategory} className='h-[150px]' />
-                        <img src={imgCategory} className='h-[150px]' /> */}
+                    {/* <div className='circle-layout' style={{ backgroundColor: "rgba(75, 46, 43, 0.16)" }}>
+                    
 
                         <img src={imgCategory} alt="Dish 1" className="circle-item item-1" />
                         <img src={imgCategory} alt="Dish 2" className="circle-item item-2" />
@@ -77,6 +73,23 @@ function HeroSection() {
                         <img src={imgCategory} alt="Dish 4" className="circle-item item-4" />
                         <img src={imgCategory} alt="Dish 5" className="circle-item item-5" />
 
+                    </div> */}
+                    <div className="circle-container">
+                        <div className="circle-item item1">
+                            <img src={imgCategory} alt="Dish 1" />
+                        </div>
+                        <div className="circle-item item2">
+                            <img src={imgCategory} alt="Dish 2" />
+                        </div>
+                        <div className="circle-item item3">
+                            <img src={imgCategory} alt="Dish 3" />
+                        </div>
+                        <div className="circle-item item4">
+                            <img src={imgCategory} alt="Dish 4" />
+                        </div>
+                        <div className="circle-item item5">
+                            <img src={imgCategory} alt="Dish 5" />
+                        </div>
                     </div>
                 </div>
 
