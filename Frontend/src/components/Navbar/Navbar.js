@@ -14,6 +14,7 @@ import axios from 'axios'
 import _ from 'lodash';
 import { createUserWithEmailAndPassword } from "firebase/auth";
 
+
 // /**
 //  * CustomAlert component to display informational message with OTP.
 //  * @param {string} message - OTP received.
@@ -21,6 +22,8 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 //  * @param {function} onClose - Callback function to close the alert.
 //  * @returns {JSX.Element|null} - Custom alert component or null if not opened.
 //  */
+
+
 const CustomAlert = ({ message, isOpen, onClose, }) => {
     // Do not render if not opened.
     if (!isOpen) return null;

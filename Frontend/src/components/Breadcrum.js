@@ -8,9 +8,9 @@ function Breadcrum() {
     const location = useLocation();
     const pathnames = location.pathname.split('/').filter(x => x);
     let breadcrumPath = '';
-    // console.log(pathnames)
+    // console.log(pathnames)s
     return (
-        <div className='flex lg:w-[1080px]  m-auto text-[#ae9533] border px-2 py-2'   >
+        <div className='flex lg:w-[1080px]  m-auto text-[#ae9533] border '   >
             <ol className='flex'>
                 <li>
                     <Link to="/">Home</Link>
