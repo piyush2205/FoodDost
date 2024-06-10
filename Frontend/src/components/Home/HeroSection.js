@@ -13,9 +13,9 @@ function HeroSection() {
             {/* ...............................hero section............................................................................... */}
             <div className='heroSection-1 lg:w-[1080px] md:w-full    sm:h-[376px]  md:h-[615px] lg:h-[600px] sm:w-[640px]  bg-cover  bg-opacity-80  bg-no-repeat  lg:flex md:flex sm:block   ' style={{ margin: "auto" }} >
                 <img src={sideImg} className='absolute z-[-1] w-[500px] left-[-300px] top-[150px] leftimage-1' />
-                <img src={sideImg} className='absolute z-[-1] w-[500px] left-[-300px] top-[1400px]' />
-                <img src={SlideRightImage} className='absolute z-[-1] w-[200px] right-[-0px] top-[660px]' />
-                <img src={SlideRightImage} className='absolute z-[-1] w-[200px] right-[-0px] top-[2090px]' />
+                <img src={sideImg} className='absolute z-[-1] w-[500px] left-[-300px] top-[1400px] leftimage-2' />
+                <img src={SlideRightImage} className='absolute z-[-1] w-[200px] right-[-0px] top-[660px] rightimage-1' />
+                <img src={SlideRightImage} className='absolute z-[-1] w-[200px] right-[-0px] top-[2090px] rightimage-2' />
                 <img src={sideImg} className='absolute z-[-1] w-[500px] left-[-300px] top-[2960px]' />
                 <div className='w-[67%] h-[429px] mt-20  text-left heroSubSection-1 '>
                     <h1 className='text-6xl leading-[80px] main-heading heroSection-1-main_heading-desktop' >Savor the  <span className='hero-section-heading-1 '>Flavor</span> <span className='hero-section-heading-2 '>full</span>  Journey with Your Culinary Companion!</h1>
