@@ -12,7 +12,9 @@
         display: none;
     }
 }
-
+.section-2-desktop{
+    margin-top: 50px;
+}
 
 @media screen and (min-width:481px)and  (max-width:680) {
     .heroSection-1{
