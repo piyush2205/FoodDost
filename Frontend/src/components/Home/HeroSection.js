@@ -127,10 +127,10 @@ function HeroSection() {
                 </div> */}
                 <div className='mt-10 md:mt-[200px] flex flex-col justify-center items-center w-full md:w-[1080px] h-auto px-4 md:px-0'>
                     <div className='w-full md:w-[1080px]'>
-                        <h1 className='font-semibold text-3xl md:text-6xl antialiased text-center'>
+                        <h1 className='font-semibold text-3xl md:text-6xl antialiased text-center heading-main-section-2-mobile'>
                             <span className='text-[#ED4949]'>Featured</span> Dishes
                         </h1>
-                        <p className='font-semibold text-xl md:text-2xl antialiased text-center mt-4'>
+                        <p className='font-semibold text-xl md:text-2xl antialiased text-center mt-4 sub-heading-section-2-mobile'>
                             Today's <span className='text-[#ED4949]'>Special</span> Picks Just for You
                         </p>
                     </div>
