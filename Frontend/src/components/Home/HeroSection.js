@@ -64,6 +64,7 @@ function HeroSection() {
                         <img src={imgCategory} className='h-[150px]' />
                     </div>
                 </div>
+
                 {/* ...............................................mobile responsvie.................................... */}
                 <div className='w-[1080px] section-2-mobile '>
                     <h1 className='font-semibold text-6xl antialiased text-center heading-main-section-2-mobile '> <span className='text-[#ED4949]'>Popular</span> Categories</h1>
@@ -138,7 +139,7 @@ function HeroSection() {
                     {/* Mobile Carousel */}
                     <div className='block md:hidden w-full mt-10 md:mt-[50px]'>
                         <Carousel
-                            showArrows={true}
+                            showArrows={false}
                             infiniteLoop={true}
                             showThumbs={false}
                             showStatus={false}
@@ -147,13 +148,13 @@ function HeroSection() {
                             className="rounded-[30px] border"
                         >
                             <div>
-                                <img src={FeaturedDishes} className='h-[300px] w-full object-cover rounded-[30px]' alt="Featured Dish 1" />
+                                <img src={FeaturedDishes} className='h-[500px] w-full object-cover rounded-[30px]' alt="Featured Dish 1" />
                             </div>
                             <div>
-                                <img src={FeaturedDishes} className='h-[300px] w-full object-cover rounded-[30px]' alt="Featured Dish 2" />
+                                <img src={FeaturedDishes} className='h-[500px] w-full object-cover rounded-[30px]' alt="Featured Dish 2" />
                             </div>
                             <div>
-                                <img src={FeaturedDishes} className='h-[300px] w-full object-cover rounded-[30px]' alt="Featured Dish 3" />
+                                <img src={FeaturedDishes} className='h-[500px] w-full object-cover rounded-[30px]' alt="Featured Dish 3" />
                             </div>
                         </Carousel>
                     </div>
