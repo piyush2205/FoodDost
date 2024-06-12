@@ -22,7 +22,7 @@ function HeroSection() {
                 <div className='w-[67%] h-[429px] mt-20 text-left heroSubSection-1 '>
                     <h1 className='text-6xl leading-[80px] main-heading heroSection-1-main_heading-desktop' >Savor the  <span className='hero-section-heading-1 '>Flavor</span> <span className='hero-section-heading-2 '>full</span>  Journey with Your Culinary Companion!</h1>
                     {/* mobile res */}
-                    <h1 className='text-6xl leading-[80px]  main-heading heroSection-1-main_heading ' >Savor the  <br /><span className='hero-section-heading-1  heroSection-1-main_span_heading'>Flavor</span> <span className='hero-section-heading-2 heroSection-1-main_span_heading'>full</span> <br /> Journey with Your Culinary Companion!</h1>
+                    <h1 className='text-6xl leading-[80px] main-heading heroSection-1-main_heading lg:hidden md:hidden ' >Savor the  <br /><span className='hero-section-heading-1  heroSection-1-main_span_heading'>Flavor</span> <span className='hero-section-heading-2 heroSection-1-main_span_heading'>full</span> <br /> Journey with Your Culinary Companion!</h1>
 
                     <div className='w-[33%] h-[429px]    mt-20 content-center hero_image-mobile'>
                         <img className='w-[90%]    hero-image-mobile-main-image' src={heroImage} />

@@ -22,10 +22,11 @@
     margin-top: 50px;
 }
 
-@media screen and (min-width:680px) {
+@media screen and (min-width:768px) {
     .heroSection-1{
         /* border:  1px solid rgb(133, 205, 123) ;   */
 }
+
 .main-heading-mobile-res{
     display: none;
 }
