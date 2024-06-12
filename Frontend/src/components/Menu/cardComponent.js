@@ -62,9 +62,10 @@ const CardComponent = memo(({ ...el }) => {
 
 
 
-                    <div className="flex items-center justify-between">
-                        <Link to={`/Gorakhpur/${el._id}`} className="rounded-full bg-[#267E3E] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#56a26a] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Order Now</Link>
-                        <Link to={`/Cart`} className=" rounded-full text-sm font-semibold  bg-[#F2C14E] leading-6 text-gray-900 hover:bg-[#ad904e] px-3.5 py-2.5 "> Your Cart <span aria-hidden="true">→</span></Link>
+                    <div className="flex items-center justify-between mt-1">
+                        <Link to={`/Cart`} className=" rounded-full text-sm font-semibold  bg-[#F2C14E] leading-6 text-gray-900 hover:bg-[#ad904e] px-3 py-1 "> Your Cart <span aria-hidden="true">→</span></Link>
+                        <Link to={`/Gorakhpur/${el._id}`} className="rounded-full bg-[#267E3E] px-3 py-1 text-sm font-semibold text-white shadow-sm hover:bg-[#56a26a] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Order Now  <span aria-hidden="true">→</span></Link>
+
                     </div>
 
                 </div>
