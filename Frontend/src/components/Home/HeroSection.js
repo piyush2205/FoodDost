@@ -22,7 +22,7 @@ function HeroSection() {
                 <div className='w-[67%] h-[429px] mt-20 text-left heroSubSection-1 '>
                     <h1 className='text-6xl leading-[80px] main-heading heroSection-1-main_heading-desktop' >Savor the  <span className='hero-section-heading-1 '>Flavor</span> <span className='hero-section-heading-2 '>full</span>  Journey with Your Culinary Companion!</h1>
                     {/* mobile res */}
-                    <h1 className='text-6xl leading-[80px]  main-heading heroSection-1-main_heading' >Savor the  <br /><span className='hero-section-heading-1  heroSection-1-main_span_heading'>Flavor</span> <span className='hero-section-heading-2 heroSection-1-main_span_heading'>full</span> <br /> Journey with Your Culinary Companion!</h1>
+                    <h1 className='text-6xl leading-[80px]  main-heading heroSection-1-main_heading ' >Savor the  <br /><span className='hero-section-heading-1  heroSection-1-main_span_heading'>Flavor</span> <span className='hero-section-heading-2 heroSection-1-main_span_heading'>full</span> <br /> Journey with Your Culinary Companion!</h1>
 
                     <div className='w-[33%] h-[429px]    mt-20 content-center hero_image-mobile'>
                         <img className='w-[90%]    hero-image-mobile-main-image' src={heroImage} />
@@ -40,7 +40,7 @@ function HeroSection() {
 
                 </div>
                 <div className='w-[33%] h-[429px]   mt-20 content-center flex items-end hero_image-desktop'>
-                    <img className='w-[90%]  ' src={heroImage} />
+                    <img className='w-[100%]  ' src={heroImage} />
                 </div>
 
 
@@ -53,10 +53,10 @@ function HeroSection() {
 
             <div className='w-[1080px] h-[auto]  m-auto main-Section-second '>
 
-                <div className='w-[1080px] section-2-desktop  '>
+                <div className='w-[1080px] section-2-desktop h-auto '>
                     <h1 className='font-semibold text-6xl antialiased text-center  '> <span className='text-[#ED4949]'>Popular</span> Categories</h1>
                     <p className='font-semibold text-2xl antialiased text-center mt-4 '>Explore Our Most <span className='text-[#ED4949]'>Loved</span> Cuisines</p>
-                    <div className='flex flex-wrap gap-12 p-8 rounded-[30px] mt-14 mb-14 place-content-center align-middle content-center w-[1080px] m-auto ' style={{ backgroundColor: "rgba(75, 46, 43, 0.16)" }}>
+                    <div className='flex flex-wrap gap-12 p-8 rounded-[30px] mt-14 mb-14 place-content-center align-middle content-center w-full m-auto ' style={{ backgroundColor: "rgba(75, 46, 43, 0.16)" }}>
                         <img src={imgCategory} className='h-[150px]' />
                         <img src={imgCategory} className='h-[150px]' />
                         <img src={imgCategory} className='h-[150px]' />
@@ -164,6 +164,7 @@ function HeroSection() {
                         <img src={FeaturedDishes} className='h-[331px] w-[255px] object-cover rounded-[30px]' />
                         <img src={FeaturedDishes} className='h-[520px] object-cover rounded-[30px]' />
                         <img src={FeaturedDishes} className='h-[331px] w-[255px] object-cover rounded-[30px]' />
+
                     </div>
 
                     <Link to="/Gorakhpur">
