@@ -59,8 +59,8 @@ function HeroSection() {
             {/* Search bar */}
 
             <div className='lg:hidden  md:hidden sm:hidden  mt-5 ' >
-                <div className='relative w-[390px] '>
-                    <input placeholder='Search for restaurant,cusie or a dish' value={searchTerm} type="text"
+                <div className='relative w-[390px] m-[auto]'>
+                    <input placeholder='Search' value={searchTerm} type="text"
                         onChange={handleSearch} onClick={() => setShowResults(true)} className=' sm:h-10 sm:w-full  h-[40px] ml-4 w-[380px] border border-[#E0E0E0] rounded-lg p-1  ' />
                     {/* {<FaSearch className=' search_icons absolute top-[13px] bottom-[0px] right-[15px] stroke-[#828282] ' />} */}
                 </div>

@@ -46,15 +46,26 @@
     .main-Section-second{
         width: 390px;
     }
- 
+    ::placeholder{
+      font-size: 18px;
+      font-weight: 400;
+      /* padding: 1px; */
+      /* align-items: center; */
+      /* justify-content: center; */
+      /* margin: auto; */
+      text-align: left;
+    
+    }
     .heroSection-1{
         height: 510px;
           width: 390px;
           /* border:  1px solid red ; */
           margin: auto;
+        
     }
     .main-heading-button{
         margin: auto;
+    
     }
     .heroSubSection-1{
         /* border: 1px solid  red; */
@@ -64,10 +75,11 @@
         background-color: rgba(135, 237, 73, 0.05);
         border-radius: 30px;
         text-align: center;
+        margin-top: 10px;
        
     }
     .heroSection-1-main_heading{
-
+      padding-top: 20px;
         margin-top: 15px;
          font-size: 18px;
          font-weight:700;
