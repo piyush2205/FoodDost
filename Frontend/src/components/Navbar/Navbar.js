@@ -559,7 +559,7 @@ function Navbar() {
                                     <ul>
                                         {
                                             results.map((result) => (
-                                                <Link to={`Gorakhpur /${result._id}`}
+                                                <Link to={`Gorakhpur/${result._id}`}
                                                     onClick={handleSearchClick}
                                                 // Clear the search term on click
 
