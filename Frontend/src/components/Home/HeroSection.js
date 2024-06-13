@@ -1,4 +1,6 @@
 import React from 'react'
+import axios from 'axios'
+import { useState, useEffect, useRef } from 'react'
 import sideImg from "../../Assets/sideImg.png"
 import heroImage from "../../Assets/heroImage.png"
 import imgCategory from "../../Assets/imgCategory.png"
@@ -9,9 +11,99 @@ import { Link } from 'react-router-dom'
 import "./HeroSection.css"
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import _ from 'lodash';
 function HeroSection() {
+    const [searchTerm, setSearchTerm] = useState('');
+    const [results, setResults] = useState([]);
+    const [showResults, setShowResults] = useState(false);
+    const searchContainerRef = useRef(null);
+
+    useEffect(() => {
+        const debouncedSearch = _.debounce(() => {
+            if (searchTerm) {
+                fetchResults();
+            } else {
+                setResults([]);
+            }
+        }, 300);
+
+        debouncedSearch();
+
+        // Cleanup debounce
+        return () => {
+            debouncedSearch.cancel();
+        };
+    }, [searchTerm]);
+
+    const fetchResults = async () => {
+        try {
+            const response = await axios.get(`https://fooddost.onrender.com/foodapidata/search?q=${encodeURIComponent(searchTerm)}`);
+            setResults(response.data);
+            setShowResults(true);
+        } catch (error) {
+            console.error('Error fetching search results:', error);
+        }
+    };
+    const handleSearch = (e) => {
+        setSearchTerm(e.target.value)
+    }
+    const handleSearchClick = (id) => {
+        console.log(id, "myid")
+        setSearchTerm("")
+        setInterval(() => {
+            window.location.reload()
+        }, 100)
+    }
     return (
         <>
+            {/* Search bar */}
+
+            <div className='lg:hidden  md:hidden sm:hidden  mt-5' >
+                <div className='relative'>
+                    <input placeholder='Search for restaurant,cusie or a dish' value={searchTerm} type="text"
+                        onChange={handleSearch} onClick={() => setShowResults(true)} className=' sm:h-10 sm:w-full  lg:h-[40px] lg:w-full border border-[#E0E0E0] rounded-lg p-1  ' />
+                    {/* {<FaSearch className=' search_icons absolute top-[13px] bottom-[0px] right-[15px] stroke-[#828282] ' />} */}
+                </div>
+
+
+                {
+                    searchTerm && <button onClick={() => setSearchTerm("")} className='absolute top-[-287px] bottom-[358px] left-[830px] ' >X</button>
+
+                }
+
+                {
+                    results.length > 0 && <div ref={searchContainerRef} className='absolute top-15 left-57 w-[25%] h-[auto] p-2 bg-white shadow-md overflow-y-scroll '>
+                        {
+                            <ul>
+                                {
+                                    results.map((result) => (
+                                        <Link to={`Gorakhpur /${result._id}`}
+                                            onClick={handleSearchClick}
+                                        // Clear the search term on click
+
+                                        >
+                                            <li key={result._id} className='flex items-center border p-2 gap-2 cursor-pointer '>
+
+
+                                                <img src="https://via.placeholder.com/150" alt="restaurant" style={{ width: '100px', height: '100px' }} />
+                                                <div>
+                                                    <h2 className='font-bold'>{result.name}</h2>
+                                                    <p>Delivery Time: {result.deliveryTimings.open} - {result.deliveryTimings.close}</p>
+                                                    <p>Rating: {result.rating}</p>
+                                                    <p>Cost For Two: {result.priceRange} /-</p>
+
+                                                    <p>Address: {result.restaurantAddress.street}</p>
+                                                </div>
+                                            </li>
+                                        </Link >
+                                    ))
+                                }
+                            </ul >
+                        }
+                    </div >
+                }
+            </div >
+            {/* Search bar */}
             {/* ...............................hero section............................................................................... */}
             <div className='heroSection-1 lg:w-[1080px] md:w-full    sm:h-[376px]  md:h-[615px] lg:h-[600px] sm:w-[640px]  bg-cover  bg-opacity-80  bg-no-repeat  lg:flex md:flex sm:block   ' style={{ margin: "auto" }} >
                 <img src={sideImg} className='absolute z-[-1] w-[500px] left-[-300px] top-[150px] leftimage-1' />
