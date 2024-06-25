@@ -4,6 +4,10 @@ import { useState, useEffect, useRef } from 'react'
 import sideImg from "../../Assets/sideImg.png"
 import heroImage from "../../Assets/heroImage.png"
 import imgCategory from "../../Assets/imgCategory.png"
+import imgCategory2 from "../../Assets/imgCategory-2.png"
+import imgCategory3 from "../../Assets/imgCategory-3.png"
+import imgCategory4 from "../../Assets/imgCategory-4.png"
+import imgCategory5 from "../../Assets/imgCategory-5.png"
 import FeaturedDishes from "../../Assets/FeaturedDishes.png"
 import quoteImg from "../../Assets/quoteImg.png"
 import SlideRightImage from "../../Assets/SlideRightImage.png"
@@ -105,25 +109,31 @@ function HeroSection() {
             </div >
             {/* Search bar */}
             {/* ...............................hero section............................................................................... */}
-            <div className='heroSection-1 lg:w-[1080px] md:w-full    sm:h-[376px]  md:h-[615px] lg:h-[600px] sm:w-[640px]  bg-cover  bg-opacity-80  bg-no-repeat  lg:flex md:flex sm:block   ' style={{ margin: "auto" }} >
+            <div className='heroSection-1  bg-cover  bg-opacity-80  bg-no-repeat  lg:flex md:flex sm:block' style={{ margin: "auto" }} >
                 <img src={sideImg} className='absolute z-[-1] w-[500px] left-[-300px] top-[150px] leftimage-1' />
-                <img src={sideImg} className='absolute z-[-1] w-[500px] left-[-300px] top-[1400px] leftimage-2' />
-                <img src={SlideRightImage} className='absolute z-[-1] w-[200px] right-[-0px] top-[660px] rightimage-1' />
+                {/* <img src={sideImg} className='absolute z-[-1] w-[500px] left-[-300px] top-[1400px] leftimage-2' /> */}
+                {/* <img src={SlideRightImage} className='absolute z-[-1] w-[200px] right-[-0px] top-[660px] rightimage-1' /> */}
                 <img src={SlideRightImage} className='absolute z-[-1] w-[200px] right-[-0px] top-[2090px] rightimage-2' />
                 <img src={sideImg} className='absolute z-[-1] w-[500px] left-[-300px] top-[2960px] leftimage-3' />
                 <div className='w-[67%] h-[429px] mt-20 text-left heroSubSection-1 '>
+
                     <h1 className='text-6xl leading-[80px] main-heading heroSection-1-main_heading-desktop' >Savor the  <span className='hero-section-heading-1 '>Flavor</span> <span className='hero-section-heading-2 '>full</span>  Journey with Your Culinary Companion!</h1>
+
                     {/* mobile res */}
-                    <h1 className='text-6xl leading-[80px] main-heading heroSection-1-main_heading lg:hidden md:hidden ' >Savor the  <br /><span className='hero-section-heading-1  heroSection-1-main_span_heading'>Flavor</span> <span className='hero-section-heading-2 heroSection-1-main_span_heading'>full</span> <br /> Journey with Your Culinary Companion!</h1>
+                    <h1 className='text-6xl leading-[80px] main-heading heroSection-1-main_heading  ' >Savor the  <br /><span className='hero-section-heading-1  heroSection-1-main_span_heading'>Flavor</span> <span className='hero-section-heading-2 heroSection-1-main_span_heading'>full</span> <br /> Journey with Your Culinary Companion!</h1>
 
                     <div className='w-[33%] h-[429px]    mt-20 content-center hero_image-mobile'>
                         <img className='w-[90%]    hero-image-mobile-main-image' src={heroImage} />
                     </div>
                     <p className='text-xl mt-[25px] w-[438px] heroSection-1-subheading_2  '>Discover the Art of <span className='text-[#ED4949]'>Cooking</span> with Expert Tips and Gourmet Recipes!</p>
-                    <p className='text-xl mt-[25px] w-[438px] heroSection-1-subheading_2_desktop   hidden'>Discover the Art of <span className='text-[#ED4949]'>Cooking</span> with Expert Tips and Gourmet Recipes!</p>
+
+                    {/* ................................................................... */}
 
 
-                    <Link to={"/Gorakhpur"} >   <button className='bg-[#4B2E2B]  main-heading-button justify-center items-center flex mt-[40px] rounded-full w-[150px] h-[50px] text-white  '><span className="mr-0">Order now</span>
+                    <p className='text-xl mt-[25px] w-[438px] heroSection-1-subheading_2_desktop   '>Discover the Art of <span className='text-[#ED4949]'>Cooking</span> with Expert Tips and Gourmet Recipes!</p>
+
+
+                    <Link to={"/Gorakhpur"} >   <button className='bg-[#4B2E2B]  hover:bg-[#543d3d]   main-heading-button justify-center items-center flex mt-[40px] rounded-full w-[150px] h-[50px] text-white  '><span className="mr-0">Order now</span>
                         <svg width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M5.70166 14.0447L13.5283 5.7832M13.5283 5.7832H6.48433M13.5283 5.7832V13.2185" stroke="white" stroke-width="0.833333" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
@@ -143,17 +153,29 @@ function HeroSection() {
             {/* .....................................................................others section.................................................................. */}
 
 
-            <div className='w-[1080px] h-[auto]  m-auto main-Section-second '>
+            <div className='lg:w-[1080px] h-[auto]  m-auto main-Section-second '>
 
-                <div className='w-[1080px] section-2-desktop h-auto '>
+                <div className=' lg:w-[1080px] section-2-desktop h-auto '>
                     <h1 className='font-semibold text-6xl antialiased text-center  '> <span className='text-[#ED4949]'>Popular</span> Categories</h1>
                     <p className='font-semibold text-2xl antialiased text-center mt-4 '>Explore Our Most <span className='text-[#ED4949]'>Loved</span> Cuisines</p>
-                    <div className='flex flex-wrap gap-12 p-8 rounded-[30px] mt-14 mb-14 place-content-center align-middle content-center w-full m-auto ' style={{ backgroundColor: "rgba(75, 46, 43, 0.16)" }}>
-                        <img src={imgCategory} className='h-[150px]' />
-                        <img src={imgCategory} className='h-[150px]' />
-                        <img src={imgCategory} className='h-[150px]' />
-                        <img src={imgCategory} className='h-[150px]' />
-                        <img src={imgCategory} className='h-[150px]' />
+                    <div className='flex flex-wrap gap-12 p-8 rounded-[30px] mt-14 mb-14 place-content-center align-middle content-center w-full m-auto main-section-second-image-div ' style={{ backgroundColor: "rgba(75, 46, 43, 0.16)" }}>
+                        <Link to={"/Gorakhpur"}>
+                            <img src={imgCategory} className='h-[150px]' />
+                        </Link>
+                        <Link to={"/Gorakhpur"}>
+                            <img src={imgCategory2} className='h-[150px]' />
+                        </Link>
+                        <Link to={"/Gorakhpur"}>
+                            <img src={imgCategory3} className='h-[150px]' />
+                        </Link>
+                        <Link to={"/Gorakhpur"}>
+                            <img src={imgCategory4} className='h-[150px]' />
+                        </Link>
+                        <Link to={"/Gorakhpur"}>
+                            <img src={imgCategory5} className='h-[150px]' />
+                        </Link>
+
+
                     </div>
                 </div>
 
@@ -176,16 +198,16 @@ function HeroSection() {
                             <img src={imgCategory} alt="Dish 1" />
                         </div>
                         <div className="circle-item item2">
-                            <img src={imgCategory} alt="Dish 2" />
+                            <img src={imgCategory2} alt="Dish 2" />
                         </div>
                         <div className="circle-item item3">
-                            <img src={imgCategory} alt="Dish 3" />
+                            <img src={imgCategory3} alt="Dish 3" />
                         </div>
                         <div className="circle-item item4">
-                            <img src={imgCategory} alt="Dish 4" />
+                            <img src={imgCategory4} alt="Dish 4" />
                         </div>
                         <div className="circle-item item5">
-                            <img src={imgCategory} alt="Dish 5" />
+                            <img src={imgCategory5} alt="Dish 5" />
                         </div>
                     </div>
                 </div>
@@ -218,8 +240,8 @@ function HeroSection() {
                     </button>
                     </Link>
                 </div> */}
-                <div className='mt-10 md:mt-[200px] flex flex-col justify-center items-center w-full md:w-[1080px] h-auto px-4 md:px-0'>
-                    <div className='w-full md:w-[1080px]'>
+                <div className='mt-10 md:mt-[200px] flex flex-col justify-center items-center w-full  h-auto px-4 md:px-0'>
+                    <div className='w-full '>
                         <h1 className='font-semibold text-3xl md:text-6xl antialiased text-center heading-main-section-2-mobile'>
                             <span className='text-[#ED4949]'>Featured</span> Dishes
                         </h1>
@@ -229,7 +251,7 @@ function HeroSection() {
                     </div>
 
                     {/* Mobile Carousel */}
-                    <div className='block md:hidden w-full mt-10 md:mt-[50px]'>
+                    <div className='block w-full mt-10 md:mt-[50px] p-20px my-class-caraousal-mobile-view '>
                         <Carousel
                             showArrows={false}
                             infiniteLoop={true}
@@ -252,7 +274,7 @@ function HeroSection() {
                     </div>
 
                     {/* Desktop View */}
-                    <div className='hidden md:flex flex-col md:flex-row gap-4 md:gap-12 p-4 md:p-8 rounded-[30px] border mt-10 md:mt-[50px] place-content-center align-middle content-center w-full md:w-[1080px] m-auto items-center'>
+                    <div className='md:flex flex-col md:flex-row gap-4 md:gap-12 p-4 md:p-8 rounded-[30px] border mt-10 md:mt-[50px] place-content-center align-middle content-center w-full md:w-[1080px] m-auto items-center my-slider-3rd-section-div'>
                         <img src={FeaturedDishes} className='h-[331px] w-[255px] object-cover rounded-[30px]' />
                         <img src={FeaturedDishes} className='h-[520px] object-cover rounded-[30px]' />
                         <img src={FeaturedDishes} className='h-[331px] w-[255px] object-cover rounded-[30px]' />
