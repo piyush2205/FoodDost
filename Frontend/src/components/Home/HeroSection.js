@@ -195,19 +195,26 @@ function HeroSection() {
                     </div> */}
                     <div className="circle-container">
                         <div className="circle-item item1">
-                            <img src={imgCategory} alt="Dish 1" />
+                            <Link to={"/Gorakhpur"}><img src={imgCategory} alt="Dish 1" /></Link>
+
                         </div>
                         <div className="circle-item item2">
-                            <img src={imgCategory2} alt="Dish 2" />
+                            <Link to={"/Gorakhpur"}>
+                                <img src={imgCategory2} alt="Dish 2" />
+                            </Link>
+
                         </div>
                         <div className="circle-item item3">
-                            <img src={imgCategory3} alt="Dish 3" />
+                            <Link> <img src={imgCategory3} alt="Dish 3" /></Link>
+
                         </div>
                         <div className="circle-item item4">
-                            <img src={imgCategory4} alt="Dish 4" />
+                            <Link> <img src={imgCategory4} alt="Dish 4" /></Link>
+
                         </div>
                         <div className="circle-item item5">
-                            <img src={imgCategory5} alt="Dish 5" />
+                            <Link> <img src={imgCategory5} alt="Dish 5" />
+                            </Link>
                         </div>
                     </div>
                 </div>
