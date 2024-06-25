@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { memo } from 'react';
 import link from "../../Assets/Link.png"
 
-const CardComponent = memo(({ ...el }) => {
+const CardComponent = memo(({ ...el}) => {
     // console.log(el)
     // console.log(props.match)
     // const { restaurantName } = el.name;

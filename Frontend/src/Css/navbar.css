@@ -92,11 +92,41 @@ fill: transparent;
 }
 
 /* Responsive styles */
-@media only screen and (min-width: 768px) {
+
+@media  only screen and (max-width:2560px) {
+
+  .my-class-Navbar-div{
+    width: 1080px;
+  }
+  
+}
+
+
+@media  only screen and (max-width:1440px) {
+
+  .my-class-Navbar-div{
+    width: 1080px;
+  }
+  
+}
+
+
+@media  only screen and (max-width:1024px)  {
+  .my-class-Navbar-div{
+    width: 800px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
  
   /* .my-navigation-login-singup{
     display: block;
  } */
+.my-class-Navbar-div{
+width: 768px;
+}
+
+
  .my-class-ul-login-signup{
   display: flex;  
 }
@@ -106,10 +136,17 @@ fill: transparent;
 }
 
 @media screen and (max-width: 680px) {
+  .my-class-Navbar-div{
+    width: 100%;
+  }
   .modal-content{
     width: 100%;
     padding: 20px;
   }
+  .my-class-Navbar-div{
+    width: 640px;
+    }
+    
   .my-girdData-container{
     padding: 20px;
 }
@@ -142,6 +179,10 @@ fill: transparent;
 }
 
 @media only screen and (max-width: 480px) {
+  .my-class-Navbar-div{
+    width: 100%;
+  }
+  
   .modal{
     padding: 30px;
   }
@@ -183,6 +224,10 @@ fill: transparent;
 }
 
 @media screen   and (max-width: 360px) {
+  .my-class-Navbar-div{
+    width: 100%;
+  }
+  
 .modal{
   padding: 30px;
 }

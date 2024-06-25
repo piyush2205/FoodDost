@@ -534,7 +534,7 @@ function Navbar() {
 
 
 
-                <div className='lg:w-[1080px]  md:w-[768px] sm:w-[640px] sm:px-4  lg:px-0 md:px-0 flex items-center place-self-center justify-between  h-20  relative m-[auto] my-class-Navbar-div '  >
+                <div className=' sm:px-4  lg:px-0 md:px-0 flex items-center place-self-center justify-between  h-20  relative m-[auto] my-class-Navbar-div '  >
                     <div className='items-center'>
                         <Link to={"/"}>   <img src={logo} alt='logo' className='h-16 w-16  logo mt-[6px]' /> </Link>
                     </div>
