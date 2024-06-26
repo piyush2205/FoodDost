@@ -122,7 +122,7 @@ function HeroSection() {
                     {/* mobile res */}
                     <h1 className='text-6xl leading-[80px] main-heading heroSection-1-main_heading  ' >Savor the  <br /><span className='hero-section-heading-1  heroSection-1-main_span_heading'>Flavor</span> <span className='hero-section-heading-2 heroSection-1-main_span_heading'>full</span> <br /> Journey with Your Culinary Companion!</h1>
 
-                    <div className='w-[33%] h-[429px]    mt-20 content-center hero_image-mobile'>
+                    <div className='w-[33%] h-[429px]    mt-[30px] mb-[20px] content-center hero_image-mobile'>
                         <img className='w-[90%]  main-herosection-image  hero-image-mobile-main-image' src={heroImage} />
                     </div>
                     <p className='text-xl mt-[25px] w-[438px] heroSection-1-subheading_2  '>Discover the Art of <span className='text-[#ED4949]'>Cooking</span> with Expert Tips and Gourmet Recipes!</p>
