@@ -123,7 +123,7 @@ function HeroSection() {
                     <h1 className='text-6xl leading-[80px] main-heading heroSection-1-main_heading  ' >Savor the  <br /><span className='hero-section-heading-1  heroSection-1-main_span_heading'>Flavor</span> <span className='hero-section-heading-2 heroSection-1-main_span_heading'>full</span> <br /> Journey with Your Culinary Companion!</h1>
 
                     <div className='w-[33%] h-[429px]    mt-20 content-center hero_image-mobile'>
-                        <img className='w-[90%]    hero-image-mobile-main-image' src={heroImage} />
+                        <img className='w-[90%]  main-herosection-image  hero-image-mobile-main-image' src={heroImage} />
                     </div>
                     <p className='text-xl mt-[25px] w-[438px] heroSection-1-subheading_2  '>Discover the Art of <span className='text-[#ED4949]'>Cooking</span> with Expert Tips and Gourmet Recipes!</p>
 
@@ -142,7 +142,7 @@ function HeroSection() {
 
                 </div>
                 <div className='w-[33%] h-[429px]   mt-20 content-center flex items-end hero_image-desktop'>
-                    <img className='w-[100%]  ' src={heroImage} />
+                    <img className='w-[100%]   hero_image-desktop-animation  ' src={heroImage} />
                 </div>
 
 
@@ -205,15 +205,15 @@ function HeroSection() {
 
                         </div>
                         <div className="circle-item item3">
-                            <Link> <img src={imgCategory3} alt="Dish 3" /></Link>
+                            <Link to={"/Gorakhpur"}> <img src={imgCategory3} alt="Dish 3" /></Link>
 
                         </div>
                         <div className="circle-item item4">
-                            <Link> <img src={imgCategory4} alt="Dish 4" /></Link>
+                            <Link to={"/Gorakhpur"}> <img src={imgCategory4} alt="Dish 4" /></Link>
 
                         </div>
                         <div className="circle-item item5">
-                            <Link> <img src={imgCategory5} alt="Dish 5" />
+                            <Link to={"/Gorakhpur"}> <img src={imgCategory5} alt="Dish 5" />
                             </Link>
                         </div>
                     </div>

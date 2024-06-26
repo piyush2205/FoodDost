@@ -3,8 +3,9 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { memo } from 'react';
 import link from "../../Assets/Link.png"
+import { FaOpencart } from "react-icons/fa"
 
-const CardComponent = memo(({ ...el}) => {
+const CardComponent = memo(({ ...el }) => {
     // console.log(el)
     // console.log(props.match)
     // const { restaurantName } = el.name;
@@ -63,8 +64,14 @@ const CardComponent = memo(({ ...el}) => {
 
 
                     <div className="flex items-center justify-between mt-1">
-                        <Link to={`/Cart`} className=" rounded-full text-sm font-semibold  bg-[#F2C14E] leading-6 text-gray-900 hover:bg-[#ad904e] px-3 py-1 "> Your Cart <span aria-hidden="true">→</span></Link>
-                        <Link to={`/Gorakhpur/${el._id}`} className="rounded-full bg-[#267E3E] px-3 py-1 text-sm font-semibold text-white shadow-sm hover:bg-[#56a26a] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Order Now  <span aria-hidden="true">→</span></Link>
+
+                        <Link to={`/Cart`} className=" rounded-full flex justify-center  p-[10px] gap-1 text-sm font-semibold  bg-[#F2C14E] leading-6 text-gray-900 hover:bg-[#ad904e] w-[120px] items-center"> Your Cart <FaOpencart /></Link>
+
+
+                        <Link to={`/Gorakhpur/${el._id}`} className="rounded-full flex justify-center items-center w-[120px] p-[10px] leading-6 bg-[#267E3E]  text-sm font-semibold text-white shadow-sm hover:bg-[#56a26a] ">
+                            Order Now <span aria-hidden="true"> →</span></Link>
+
+
 
                     </div>
 

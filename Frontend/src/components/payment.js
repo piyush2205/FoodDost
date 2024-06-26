@@ -92,7 +92,7 @@ function Payment() {
                     45.54
                 </p>
                 <h1 className='font-semibold text-2xl'>
-                    TO PAY :&#8377;{TotalPrice + 29 + 5.03 + 45.54}
+                    TO PAY :&#8377; {Math.round(TotalPrice + 29 + 5.03 + 45.54)}
                 </h1>
 
             </div>
