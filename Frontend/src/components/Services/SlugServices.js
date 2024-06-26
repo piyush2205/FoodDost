@@ -1,8 +1,7 @@
 const slugToTitleDictionary = {
-    "gorakhpur": "Gorakhpur",
-    "dehradoon": "Dehradoon",
-    "noida": "Noida",
-    "delhi": "Delhi",
+    "Your-Order": "Order-List",
+    "sasdawdnmasdbjasbd": "Res"
+
 }
 
 export const convertSlugToTitle = (slug) => {

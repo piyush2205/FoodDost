@@ -114,6 +114,7 @@ export const CartProvider = ({ children }) => {
 
     const addToCart = (price, restaurantId, itemId, quantity, dishName, restaurantName) => {
         // console.log("quantity", quantity)
+        // console.log(restaurantName)
         // Check if the item is already in the cart
         if (currentRestaurantId && currentRestaurantId !== restaurantId && Object.keys(quantities).length > 0) {
             // Show the confirmation popup

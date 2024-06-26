@@ -185,7 +185,7 @@ function Navbar() {
             // console.log(auth.currentUser.displayName);
             // console.log(auth.currentUser.email);
             // console.log(auth.currentUser.photoURL);
-            // customToken ? myNavigate("/") : myNavigate("/Gorakhpur")
+            // customToken ? myNavigate("/") : myNavigate("/Your-Order")
 
         } catch (error) {
             console.log(error.message);
@@ -258,14 +258,14 @@ function Navbar() {
         // console.log(UserEmail, UserName)
         localStorage.setItem('userName', UserName)
         if (isAgreed) {
-            console.log('Form submitted!');
+            // console.log('Form submitted!');
             // Submit your form logic here
         }
 
         try {
             const userCredential = await createUserWithEmailAndPassword(auth, UserEmail, UserPassword);
             const user = userCredential.user;
-            console.log(user)
+            // console.log(user)
             // Update the user's profile with their name
             // await user({
             //     displayName: UserName,
@@ -278,11 +278,11 @@ function Navbar() {
                 setShowPopup3(false)
             }, 3000)
             setShowAlert3("User registered successfully");
-            console.log('User registered with name:', user.displayName);
+            // console.log('User registered with name:', user.displayName);
             // User registered successfully, you can redirect them or show a success message
 
         } catch (error) {
-            console.log(error.message);
+            // console.log(error.message);
             setTimeout(() => {
 
                 setShowPopup2(false)
@@ -397,7 +397,7 @@ function Navbar() {
             // Proceed with login or registration
             localStorage.setItem('phoneNumber', phoneNumber);
             // console.log(localStorage.getItem('phoneNumber'))
-            // myNavigate("/Gorakhpur")
+            // myNavigate("/Your-Order")
             setModalMode('signup');
             setShowPopup(true);
             setTimeout(() => {
@@ -559,7 +559,7 @@ function Navbar() {
                                     <ul>
                                         {
                                             results.map((result) => (
-                                                <Link to={`Gorakhpur/${result._id}`}
+                                                <Link to={`Your-Order/${result._id}`}
                                                     onClick={handleSearchClick}
                                                 // Clear the search term on click
 

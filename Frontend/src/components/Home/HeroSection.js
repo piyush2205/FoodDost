@@ -81,7 +81,7 @@ function HeroSection() {
                             <ul>
                                 {
                                     results.map((result) => (
-                                        <Link to={`Gorakhpur/${result._id}`}
+                                        <Link to={`Your-Order/${result._id}`}
                                             onClick={handleSearchClick}
                                         // Clear the search term on click
 
@@ -133,7 +133,7 @@ function HeroSection() {
                     <p className='text-xl mt-[25px] w-[438px] heroSection-1-subheading_2_desktop   '>Discover the Art of <span className='text-[#ED4949]'>Cooking</span> with Expert Tips and Gourmet Recipes!</p>
 
 
-                    <Link to={"/Gorakhpur"} >   <button className='bg-[#4B2E2B]  hover:bg-[#543d3d]   main-heading-button justify-center items-center flex mt-[40px] rounded-full w-[150px] h-[50px] text-white  '><span className="mr-0">Order now</span>
+                    <Link to={"/Your-Order"} >   <button className='bg-[#4B2E2B]  hover:bg-[#543d3d]   main-heading-button justify-center items-center flex mt-[40px] rounded-full w-[150px] h-[50px] text-white  '><span className="mr-0">Order now</span>
                         <svg width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M5.70166 14.0447L13.5283 5.7832M13.5283 5.7832H6.48433M13.5283 5.7832V13.2185" stroke="white" stroke-width="0.833333" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
@@ -159,19 +159,19 @@ function HeroSection() {
                     <h1 className='font-semibold text-6xl antialiased text-center  '> <span className='text-[#ED4949]'>Popular</span> Categories</h1>
                     <p className='font-semibold text-2xl antialiased text-center mt-4 '>Explore Our Most <span className='text-[#ED4949]'>Loved</span> Cuisines</p>
                     <div className='flex flex-wrap gap-12 p-8 rounded-[30px] mt-14 mb-14 place-content-center align-middle content-center w-full m-auto main-section-second-image-div ' style={{ backgroundColor: "rgba(75, 46, 43, 0.16)" }}>
-                        <Link to={"/Gorakhpur"}>
+                        <Link to={"/Your-Order"}>
                             <img src={imgCategory} className='h-[150px]' />
                         </Link>
-                        <Link to={"/Gorakhpur"}>
+                        <Link to={"/Your-Order"}>
                             <img src={imgCategory2} className='h-[150px]' />
                         </Link>
-                        <Link to={"/Gorakhpur"}>
+                        <Link to={"/Your-Order"}>
                             <img src={imgCategory3} className='h-[150px]' />
                         </Link>
-                        <Link to={"/Gorakhpur"}>
+                        <Link to={"/Your-Order"}>
                             <img src={imgCategory4} className='h-[150px]' />
                         </Link>
-                        <Link to={"/Gorakhpur"}>
+                        <Link to={"/Your-Order"}>
                             <img src={imgCategory5} className='h-[150px]' />
                         </Link>
 
@@ -195,25 +195,25 @@ function HeroSection() {
                     </div> */}
                     <div className="circle-container">
                         <div className="circle-item item1">
-                            <Link to={"/Gorakhpur"}><img src={imgCategory} alt="Dish 1" /></Link>
+                            <Link to={"/Your-Order"}><img src={imgCategory} alt="Dish 1" /></Link>
 
                         </div>
                         <div className="circle-item item2">
-                            <Link to={"/Gorakhpur"}>
+                            <Link to={"/Your-Order"}>
                                 <img src={imgCategory2} alt="Dish 2" />
                             </Link>
 
                         </div>
                         <div className="circle-item item3">
-                            <Link to={"/Gorakhpur"}> <img src={imgCategory3} alt="Dish 3" /></Link>
+                            <Link to={"/Your-Order"}> <img src={imgCategory3} alt="Dish 3" /></Link>
 
                         </div>
                         <div className="circle-item item4">
-                            <Link to={"/Gorakhpur"}> <img src={imgCategory4} alt="Dish 4" /></Link>
+                            <Link to={"/Your-Order"}> <img src={imgCategory4} alt="Dish 4" /></Link>
 
                         </div>
                         <div className="circle-item item5">
-                            <Link to={"/Gorakhpur"}> <img src={imgCategory5} alt="Dish 5" />
+                            <Link to={"/Your-Order"}> <img src={imgCategory5} alt="Dish 5" />
                             </Link>
                         </div>
                     </div>
@@ -240,7 +240,7 @@ function HeroSection() {
                         <img src={FeaturedDishes} className='h-[331px] w-[255px]' />
                     </div>
 
-                    <Link to={"/Gorakhpur"} >   <button className='bg-[#4B2E2B]  justify-center items-center flex mt-[40px] rounded-full w-[150px] h-[50px] text-white  '><span className="mr-0">Order now</span>
+                    <Link to={"/Your-Order"} >   <button className='bg-[#4B2E2B]  justify-center items-center flex mt-[40px] rounded-full w-[150px] h-[50px] text-white  '><span className="mr-0">Order now</span>
                         <svg width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M5.70166 14.0447L13.5283 5.7832M13.5283 5.7832H6.48433M13.5283 5.7832V13.2185" stroke="white" stroke-width="0.833333" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
@@ -288,7 +288,7 @@ function HeroSection() {
 
                     </div>
 
-                    <Link to="/Gorakhpur">
+                    <Link to="/Your-Order">
                         <button className='bg-[#4B2E2B] justify-center items-center flex mt-10 md:mt-[40px] rounded-full w-[150px] h-[50px] text-white'>
                             <span className="mr-2">Order now</span>
                             <svg width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">

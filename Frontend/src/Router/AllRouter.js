@@ -52,7 +52,7 @@ function AllRouter() {
             setTimeout(() => {
                 setShowPopup(false); // Ensure alert is cleared on redirect
             }, 10000); // Adjust timing as needed
-            return <Navigate to="/Gorakhpur" replace />;
+            return <Navigate to="/Your-Order" replace />;
         }
         return children;
     };
@@ -81,9 +81,9 @@ function AllRouter() {
 
 
                     {/* <Route path='/LocationSection' element={<LocationSection />} /> */}
-                    <Route path='/Gorakhpur' element={<OrderSection />} />
-                    {/* <Route path='/Gorakhpur/SingleComponet/:id' element={<SingleComponet />} /> */}
-                    <Route path='/Gorakhpur/:id' element={<Menu />} />
+                    <Route path='/Your-Order' element={<OrderSection />} />
+                    {/* <Route path='/Your-Order/SingleComponet/:id' element={<SingleComponet />} /> */}
+                    <Route path='/Your-Order/:id' element={<Menu />} />
                     <Route path='/Cart' element={<CartPage />} />
                     <Route path='/payment' element={
                         <ProtectedRoute>
