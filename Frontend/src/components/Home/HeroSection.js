@@ -62,10 +62,10 @@ function HeroSection() {
         <>
             {/* Search bar */}
 
-            <div className='lg:hidden  md:hidden sm:hidden  mt-5 ' >
-                <div className='relative w-[390px] m-[auto]'>
+            <div className='lg:hidden  md:hidden sm:hidden my-search mt-5 ' >
+                <div className='relative  m-[auto]'>
                     <input placeholder='Search' value={searchTerm} type="text"
-                        onChange={handleSearch} onClick={() => setShowResults(true)} className=' sm:h-10 sm:w-full  h-[40px] ml-4 w-[380px] border border-[#E0E0E0] rounded-lg p-1  ' />
+                        onChange={handleSearch} onClick={() => setShowResults(true)} className=' sm:h-10   h-[40px] ml-4 my-search  border border-[#E0E0E0] rounded-lg p-1  ' />
                     {/* {<FaSearch className=' search_icons absolute top-[13px] bottom-[0px] right-[15px] stroke-[#828282] ' />} */}
                 </div>
 
@@ -122,7 +122,7 @@ function HeroSection() {
                     {/* mobile res */}
                     <h1 className='text-6xl leading-[80px] main-heading heroSection-1-main_heading  ' >Savor the  <br /><span className='hero-section-heading-1  heroSection-1-main_span_heading'>Flavor</span> <span className='hero-section-heading-2 heroSection-1-main_span_heading'>full</span> <br /> Journey with Your Culinary Companion!</h1>
 
-                    <div className='w-[33%] h-[429px]    mt-[30px] mb-[20px] content-center hero_image-mobile'>
+                    <div className='w-[33%] h-[429px]    content-center hero_image-mobile'>
                         <img className='w-[90%]  main-herosection-image  hero-image-mobile-main-image' src={heroImage} />
                     </div>
                     <p className='text-xl mt-[25px] w-[438px] heroSection-1-subheading_2  '>Discover the Art of <span className='text-[#ED4949]'>Cooking</span> with Expert Tips and Gourmet Recipes!</p>
