@@ -313,6 +313,7 @@ function Navbar() {
     const otpInputRefs = useRef([]);
     const [generatedOtp, setGeneratedOtp] = useState('');
     const [otpStatus, setOtpStatus] = useState('');
+
     const handlePhoneNumberChange = (e) => {
         const regex = /^[0-9\b]+$/;
         const value = e.target.value;

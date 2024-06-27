@@ -38,17 +38,18 @@
     font-weight:normal;
    }
   ::placeholder{
-    font-size: 18px;
+    /* border: 1px solid red; */
+    font-size: 14px;
     font-weight: 600;
-    padding: 20px;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
+    /* padding: 20px; */
+    /* align-items: center; */
+    /* justify-content: center; */
+    /* margin: auto; */
   
   }
      input[type="text"] {
        color:  rgb(0, 0, 0);
-       font-size: 12px;
+       font-size: 14px;
        font-weight: 700;
        padding-left: 30px;
        align-items: center;
