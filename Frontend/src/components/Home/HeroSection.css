@@ -673,4 +673,14 @@
   .quoteSpan{
     font-size: 18px;
   }
+
+  .myclass-search-close-button-mobile{
+    position: absolute;
+    right: 27px;
+    top: 112px;
+}
+
+.search_icons{
+     top:0px
+}
 }

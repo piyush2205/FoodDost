@@ -51,7 +51,7 @@
        color:  rgb(0, 0, 0);
        font-size: 14px;
        font-weight: 700;
-       padding-left: 30px;
+       padding-left: 20px;
        align-items: center;
        justify-content: center;
        margin: auto;
@@ -225,6 +225,11 @@ width: 768px;
 }
 
 @media screen   and (max-width: 360px) {
+
+  .myclass-search-close-button{
+       display: none;
+  }
+
   .my-class-Navbar-div{
     width: 100%;
   }

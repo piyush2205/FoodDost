@@ -16,6 +16,8 @@ import "./HeroSection.css"
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import _ from 'lodash';
+import { BsFillSearchHeartFill } from "react-icons/bs";
+import { IoCloseSharp } from "react-icons/io5";
 function HeroSection() {
     const [searchTerm, setSearchTerm] = useState('');
     const [results, setResults] = useState([]);
@@ -63,15 +65,15 @@ function HeroSection() {
             {/* Search bar */}
 
             <div className='lg:hidden  md:hidden sm:hidden my-search mt-5 ' >
-                <div className='relative  m-[auto]'>
+                <div className='relative  m-[auto]' >
                     <input placeholder='Search' value={searchTerm} type="text"
-                        onChange={handleSearch} onClick={() => setShowResults(true)} className=' sm:h-10   h-[40px] ml-4 my-search  border border-[#E0E0E0] rounded-lg p-1  ' />
-                    {/* {<FaSearch className=' search_icons absolute top-[13px] bottom-[0px] right-[15px] stroke-[#828282] ' />} */}
+                        onChange={handleSearch} onClick={() => setShowResults(true)} className='sm:h-10  h-[40px] ml-4 my-search  border border-[#E0E0E0] rounded-lg p-1  ' />
+                    <BsFillSearchHeartFill className=' search_icons absolute flex top-[11px] right-[27px] ' />
                 </div>
 
 
                 {
-                    searchTerm && <button onClick={() => setSearchTerm("")} className='absolute top-[-287px] bottom-[358px] left-[830px] ' >X</button>
+                    searchTerm && <button onClick={() => setSearchTerm("")} className='absolute myclass-search-close-button-mobile  ' ><IoCloseSharp /></button>
 
                 }
 

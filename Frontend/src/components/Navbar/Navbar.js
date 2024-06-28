@@ -13,7 +13,8 @@ import { FaSearch } from "react-icons/fa";
 import axios from 'axios'
 import _ from 'lodash';
 import { createUserWithEmailAndPassword } from "firebase/auth";
-
+import { IoCloseSharp } from "react-icons/io5";
+import { BsFillSearchHeartFill } from "react-icons/bs";
 
 // /**
 //  * CustomAlert component to display informational message with OTP.
@@ -545,12 +546,13 @@ function Navbar() {
                         <div className='relative flex items-center'>
                             <input placeholder='Search for restaurant,cusie or a dish' value={searchTerm} type="text"
                                 onChange={handleSearch} onClick={() => setShowResults(true)} className=' sm:h-10 sm:w-26  lg:h-[40px] lg:w-[295px] border border-[#E0E0E0] rounded-lg p-1  search_input' />
-                            {/* {<FaSearch className=' search_icons absolute top-[13px] bottom-[0px] right-[15px] stroke-[#828282] ' />} */}
+                            <BsFillSearchHeartFill className='absolute myclass-search-close-button top-[13px] bottom-[0px] right-[15px]  fill-[#f2c14e97] ' />
+
                         </div>
 
 
                         {
-                            searchTerm && <button onClick={() => setSearchTerm("")} className='absolute top-[-287px] bottom-[358px] left-[830px] ' >X</button>
+                            searchTerm && <button onClick={() => setSearchTerm("")} className='absolute myclass-search-close-button top-[32px] bottom-[40px] left-[549px] '><IoCloseSharp /></button>
 
                         }
 
