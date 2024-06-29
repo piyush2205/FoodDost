@@ -12,20 +12,24 @@ const CartPage = () => {
     }
 
     return (
-        <div className="container mx-auto lg:w-[1224px] md:w-[768px] sm:w-[640px] mt-10">
+        <div className="container mx-auto lg:w-[1080px] md:w-[768px] sm:w-[640px] mt-[20px]">
             <Breadcrum />
-            <h1 className="lg:text-3xl md:text-2xl sm:text-xs Poppins font-semibold mb-8"> Your Food Court</h1>
-            {
-                totalItems === 0 ? <img className='w-[70vw] h-[auto]  m-[auto] ' src={emptyCart} /> : <h1 className='lg:text-3xl md:text-2xl sm:text-xs Poppins py-4 '>
-                    Checkout :-
-                </h1>
-            }
+            <h1 className="lg:text-3xl md:text-2xl sm:text-xs Poppins font-semibold text-center my-[50px]"> Your Food Court</h1>
+            {/* {
+                totalItems === 0 ? <img className='w-[70vw] h-[auto]  m-[auto] ' src={emptyCart} /> : ""
+
+            } */}
 
             {
                 Object.keys(quantities).length === 0 ? (
-                    <p className="lg:text-3xl md:text-2xl sm:text-xs Poppins py-4 text-center m-[auto] ">Your cart is empty.</p>
+                    <div>
+                        <p className="lg:text-3xl md:text-2xl sm:text-xs Poppins py-4 text-center m-[auto] ">Your cart is empty.</p>
+                        <img className='w-[70vw] h-[auto]  m-[auto] ' src={emptyCart} />
+
+                    </div>
+
                 ) : (
-                    <div className="border border-gray-300 p-4  overflow-x-auto">
+                    <div className="border border-gray-300 p-4 mt-[25px] mb-[100px] overflow-x-auto">
                         <table className="w-full border-collapse border ">
                             <thead>
                                 <tr>
@@ -59,8 +63,9 @@ const CartPage = () => {
 
                         </button>
                     </div>
-                )}
-        </div>
+                )
+            }
+        </div >
     );
 };
 

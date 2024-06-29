@@ -68,8 +68,8 @@ const CardComponent = memo(({ ...el }) => {
 
                     <div className="flex items-center justify-between mt-1 pt-[5px]">
                         <Link to={`/Your-Order/${el._id}`} className="rounded-full flex justify-center items-center w-[120px] p-[8px] leading-6 bg-[#267E3E]  text-sm font-semibold text-white shadow-sm hover:bg-[#56a26a] ">
-                            Order Now  <span aria-hidden="true">  →</span></Link>
-                        <Link to={`/Cart`} className=" rounded-full flex justify-center  p-[8px] gap-1 text-sm font-semibold  bg-[#F2C14E] leading-6 text-gray-900 hover:bg-[#ad904e] w-[120px] items-center"> Your Cart <FaOpencart /></Link>
+                            Order Now  </Link>
+                        <Link to={`/Cart`} className=" rounded-full flex justify-center  p-[8px] gap-1 text-sm font-semibold  bg-[#F2C14E] leading-6 text-gray-900 hover:bg-[#ad904e] w-[120px] items-center"> Your Cart →</Link>
 
 
 
