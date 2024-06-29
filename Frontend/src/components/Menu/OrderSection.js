@@ -9,8 +9,9 @@ import { LiaArrowCircleLeftSolid } from "react-icons/lia";
 import { LiaArrowCircleRightSolid } from "react-icons/lia";
 // import "../Css/OrderSection.css"
 import Breadcrum from '../Breadcrum';
-
+// const data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 function OrderSection() {
+
     const [isRating4PlusActive, setRating4PlusActive] = useState(false);
     const [isFilterEmpty, setIsFilterEmpty] = useState(false);
     const [foodData, SetFoodData] = useState([])
@@ -150,6 +151,7 @@ function OrderSection() {
 
                 </div> :
                     <>
+
                         <div className="flex min-h-screen items-center justify-center">
 
                             <div className="w-1/3">

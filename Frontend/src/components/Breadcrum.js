@@ -10,7 +10,7 @@ function Breadcrum() {
     let breadcrumPath = '';
     // console.log(pathnames)s
     return (
-        <div className='flex lg:w-[1080px]  m-auto text-[#ae9533] border '   >
+        <div className='flex lg:w-[1080px]  m-auto text-[#ae9533] border p-2 '   >
             <ol className='flex'>
                 <li>
                     <Link to="/">Home</Link>

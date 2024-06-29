@@ -6,6 +6,12 @@ import { lazy, Suspense } from 'react'
 import Animation from '../Assets/Animation.gif'
 import UserProfilePage from '../components/user/UserProfilePage'
 import UserSettings from '../components/user/UserSettings'
+
+// import Orders from './components/Orders';
+
+// import { BrowserRoutewitch as  } from 'react-router-dom';
+
+
 // import HeroSection from "../components/Home/HeroSection"
 //lazy loading
 const OrderSection = lazy(() => import('../components/Menu/OrderSection'))
@@ -14,9 +20,10 @@ const SingleComponet = lazy(() => import('../components/SingleComponet'))
 // const Login = lazy(() => import('../components/Login'))
 const Menu = lazy(() => import('../components/Menu'))
 const Payment = lazy(() => import('../components/payment'))
-const CartPage = lazy(() => import('../components/CartPage'))
+const CheckoutPage = lazy(() => import('../components/CheckoutPage'))
 const Navbar = lazy(() => import('../components/Navbar/Navbar'))
 const Footer = lazy(() => import('../components/Footer/Footer'))
+
 
 
 const PopupAlert = ({ isOpen, onClose, message }) => {
@@ -75,16 +82,18 @@ function AllRouter() {
                     <span class="sr-only">Loading...</span>
                 </div>
             }>
+
+
                 <Routes>
 
-                    <Route path='/' element={<HeroSection />} />
 
+                    <Route path='/' element={<HeroSection />} />
 
                     {/* <Route path='/LocationSection' element={<LocationSection />} /> */}
                     <Route path='/Your-Order' element={<OrderSection />} />
                     {/* <Route path='/Your-Order/SingleComponet/:id' element={<SingleComponet />} /> */}
                     <Route path='/Your-Order/:id' element={<Menu />} />
-                    <Route path='/Cart' element={<CartPage />} />
+                    <Route path='/Cart' element={<CheckoutPage />} />
                     <Route path='/payment' element={
                         <ProtectedRoute>
                             <Payment />

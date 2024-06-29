@@ -38,7 +38,7 @@ const CardComponent = memo(({ ...el }) => {
                 <div className="p-4  w-[328px] m-[auto] flex flex-col gap-[5px] border-blue-700" >
                     <div className="flex gap-2 ">
                         <h2 className="text-[17px]  text-left whitespace-nowrap overflow-hidden text-ellipsis w-52 ">{el.name}</h2>
-                        <div className="inline-flex items-center  rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10">NEW</div>
+                        {/* <div className="inline-flex items-center  rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10">NEW</div> */}
                         <div className="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">Declicious</div>
                         <div className="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">{el.rating} </div>
                     </div>

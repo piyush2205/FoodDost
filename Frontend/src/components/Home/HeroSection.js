@@ -9,6 +9,8 @@ import imgCategory3 from "../../Assets/imgCategory-3.png"
 import imgCategory4 from "../../Assets/imgCategory-4.png"
 import imgCategory5 from "../../Assets/imgCategory-5.png"
 import FeaturedDishes from "../../Assets/FeaturedDishes.png"
+import FeaturedImg1 from "../../Assets/FeatureImg1.png"
+import FeaturedImg2 from "../../Assets/FeatureImg2.png"
 import quoteImg from "../../Assets/quoteImg.png"
 import SlideRightImage from "../../Assets/SlideRightImage.png"
 import { Link } from 'react-router-dom'
@@ -274,19 +276,28 @@ function HeroSection() {
                                 <img src={FeaturedDishes} className='h-[500px] w-full object-cover rounded-[30px]' alt="Featured Dish 1" />
                             </div>
                             <div>
-                                <img src={FeaturedDishes} className='h-[500px] w-full object-cover rounded-[30px]' alt="Featured Dish 2" />
+                                <img src={FeaturedImg1} className='h-[500px] w-full object-cover rounded-[30px]' alt="Featured Dish 2" />
                             </div>
                             <div>
-                                <img src={FeaturedDishes} className='h-[500px] w-full object-cover rounded-[30px]' alt="Featured Dish 3" />
+                                <img src={FeaturedImg2} className='h-[500px] w-full object-cover rounded-[30px]' alt="Featured Dish 3" />
                             </div>
                         </Carousel>
                     </div>
 
                     {/* Desktop View */}
                     <div className='md:flex flex-col md:flex-row gap-4 md:gap-12 p-4 md:p-8 rounded-[30px] border mt-10 md:mt-[50px] place-content-center align-middle content-center w-full md:w-[1080px] m-auto items-center my-slider-3rd-section-div'>
-                        <img src={FeaturedDishes} className='h-[331px] w-[255px] object-cover rounded-[30px]' />
-                        <img src={FeaturedDishes} className='h-[520px] object-cover rounded-[30px]' />
-                        <img src={FeaturedDishes} className='h-[331px] w-[255px] object-cover rounded-[30px]' />
+
+                        <Link to={"/your-order"}>
+                            <img src={FeaturedImg1} className='h-[331px] w-[255px] object-cover rounded-[30px] opacity-[50%] ' />
+                        </Link>
+                        <Link to={"/your-order"}>
+                            <img src={FeaturedDishes} className='h-[520px] object-cover rounded-[30px] ' />
+                        </Link>
+                        <Link to={"/your-order"}>
+                            <img src={FeaturedImg2} className='h-[331px] w-[255px] object-cover rounded-[30px] opacity-[50%] ' />
+                        </Link>
+
+
 
                     </div>
 
