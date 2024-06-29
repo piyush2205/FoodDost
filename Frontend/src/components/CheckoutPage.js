@@ -17,7 +17,7 @@ const CartPage = () => {
             <h1 className="lg:text-3xl md:text-2xl sm:text-xs Poppins font-semibold mb-8"> Your Food Court</h1>
             {
                 totalItems === 0 ? <img className='w-[70vw] h-[auto]  m-[auto] ' src={emptyCart} /> : <h1 className='lg:text-3xl md:text-2xl sm:text-xs Poppins py-4 '>
-                    Restaurant Name : {restaurantName}
+                    Checkout :-
                 </h1>
             }
 
