@@ -69,7 +69,7 @@ function HeroSection() {
             <div className='lg:hidden  md:hidden sm:hidden my-search mt-5 ' >
                 <div className='relative  m-[auto]' >
                     <input placeholder='Search' value={searchTerm} type="text"
-                        onChange={handleSearch} onClick={() => setShowResults(true)} className='sm:h-10  h-[40px] ml-4 my-search  border border-[#E0E0E0] rounded-lg p-1  ' />
+                        onChange={handleSearch} onClick={() => setShowResults(true)} className='sm:h-10 relative z-[-1]  h-[40px] ml-4 my-search  border border-[#E0E0E0] rounded-lg p-1  ' />
                     {/* <BsFillSearchHeartFill className=' search_icons absolute flex top-[11px] right-[27px] ' /> */}
                 </div>
 
