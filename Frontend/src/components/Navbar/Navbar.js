@@ -606,7 +606,7 @@ function Navbar() {
                     {/* Mobile Menu Dropdown */}
                     {
                         isMobileMenuOpen && (
-                            <div className='  top-20 left-0 w-full bg-white shadow-md absolute z-1'>
+                            <div className='  top-20 left-0 w-full bg-white shadow-md absolute z-10'>
                                 <ul className='flex flex-col items-center gap-4 py-4'>
                                     {/* Adjust your navigation links as needed */}
                                     <li>
@@ -618,7 +618,7 @@ function Navbar() {
                                         <>
 
 
-                                            <div className="relative items-center gap-2 flex " onClick={() => toggleDropdown}>
+                                            <div className="items-center gap-2 flex " onClick={() => toggleDropdown}>
                                                 <button onClick={toggleDropdown} className="flex items-center focus:outline-none  font-semibold   ">
                                                     {
                                                         user?.photoURL ?
