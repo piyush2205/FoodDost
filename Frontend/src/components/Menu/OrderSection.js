@@ -165,7 +165,8 @@ function OrderSection() {
                                     </div>
                                     <div className="px-6 pt-4 pb-2">
                                         <div className="h-4 bg-gray-300 w-1/4 mb-2"></div>
-                                        <div className="h-4 bg-gray-300 w-1/2"></div>
+                                        <div className="h-4 bg-gray-300 w-1/2 mb-2"></div>
+                                        <div className="h-4 w-1/2 mb-2">wait for few minute </div>
                                     </div>
                                 </div>
                             </div>
