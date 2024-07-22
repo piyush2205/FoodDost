@@ -103,8 +103,8 @@
               /* border:  1px solid rgb(133, 205, 123) ;   */
     }
     .heroSubSection-1{
-      position: relative;
-      z-index: -1;
+    
+    
          /* width: 60%; */
          /* border: 1px solid blue; */
    }
@@ -158,8 +158,6 @@
   }
 
   .heroSubSection-1{
-     position: relative;
-     z-index: -1;
         width: 60%;
         /* border: 1px solid blue; */
   }
@@ -218,6 +216,7 @@
 
 @media screen and (max-width:768px) {
   .heroSection-1{
+    position: relative;
     width: 768px;
     height: 600px;
     /* border: 1px solid red; */
@@ -285,6 +284,7 @@
     
     }
     .heroSection-1{
+      position: relative;
         height: 510px;
           width: 390px;
           /* border:  1px solid rgb(0, 51, 255) ; */
@@ -494,13 +494,13 @@
     
     }
     .heroSection-1{
+      
         height: 510px;
           width: 100%;
           padding: 20px 0px;
-          border:  1px solid rgb(0, 51, 255) ;
+          /* border:  1px solid rgb(0, 51, 255) ; */
           margin: auto;
-          position: relative;
-          z-index: -1;
+        
         
     }
     .main-Section-second{
@@ -512,6 +512,7 @@
     
     }
     .heroSubSection-1{
+      
         border: 1px solid  rgba(0, 255, 123, 0.182);
         width: 320px;
         height: 540px;

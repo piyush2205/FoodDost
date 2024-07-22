@@ -142,6 +142,10 @@ width: 768px;
   .my-class-Navbar-div{
     width: 100%;
   }
+  /* .modal{
+    position: absolute;
+    z-index: 1;
+  } */
   .modal-content{
     width: 100%;
     padding: 20px;
@@ -237,11 +241,14 @@ width: 768px;
   .myclass-search-close-button{
        display: none;
   }
-
+  
   .my-class-Navbar-div{
     width: 100%;
   }
-  
+  /* .modal{
+    position: absolute;
+    z-index: 1;
+  } */
 .modal{
   padding: 30px;
 }

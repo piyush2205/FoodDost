@@ -606,7 +606,7 @@ function Navbar() {
                     {/* Mobile Menu Dropdown */}
                     {
                         isMobileMenuOpen && (
-                            <div className=' absolute top-20 left-0 w-full bg-white shadow-md'>
+                            <div className='  top-20 left-0 w-full bg-white shadow-md absolute z-1'>
                                 <ul className='flex flex-col items-center gap-4 py-4'>
                                     {/* Adjust your navigation links as needed */}
                                     <li>

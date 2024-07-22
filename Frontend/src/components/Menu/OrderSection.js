@@ -79,7 +79,7 @@ function OrderSection() {
             </h1>
 
             <Breadcrum />
-            <div className='border-b m-auto lg:w-[1080px]'>
+            <div className='border-b m-auto lg:w-[1080px] sm:p-3 '>
                 <div className='flex flex-wrap py-4 gap-2'>
                     <button
                         onClick={handleRating}
