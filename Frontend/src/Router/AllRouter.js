@@ -6,6 +6,7 @@ import { lazy, Suspense } from 'react'
 import Animation from '../Assets/Animation.gif'
 import UserProfilePage from '../components/user/UserProfilePage'
 import UserSettings from '../components/user/UserSettings'
+//import AdminSignInPage from '../components/admin/dashboard'
 
 // import Orders from './components/Orders';
 
@@ -85,6 +86,7 @@ function AllRouter() {
 
 
                 <Routes>
+
 
 
                     <Route path='/' element={<HeroSection />} />

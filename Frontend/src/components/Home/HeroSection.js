@@ -164,19 +164,24 @@ function HeroSection() {
                     <p className='font-semibold text-2xl antialiased text-center mt-4 '>Explore Our Most <span className='text-[#ED4949]'>Loved</span> Cuisines</p>
                     <div className='flex flex-wrap gap-12 p-8 rounded-[30px] mt-14 mb-14 place-content-center align-middle content-center w-full m-auto main-section-second-image-div ' style={{ backgroundColor: "rgba(75, 46, 43, 0.16)" }}>
                         <Link to={"/Your-Order"}>
-                            <img src={imgCategory} className='h-[150px]' />
+                            <img src={imgCategory} className='h-[150px]' alt='img1' />
+                            <h3 className='font-semibold text-xl antialiased text-center mt-4'>Chiken</h3>
                         </Link>
                         <Link to={"/Your-Order"}>
-                            <img src={imgCategory2} className='h-[150px]' />
+                            <img src={imgCategory2} className='h-[150px]' alt='img2' />
+                            <h3 className='font-semibold text-xl antialiased text-center mt-4'>Tofu</h3>
                         </Link>
                         <Link to={"/Your-Order"}>
-                            <img src={imgCategory3} className='h-[150px]' />
+                            <img src={imgCategory3} className='h-[150px]' alt='img3' />
+                            <h3 className='font-semibold text-xl antialiased text-center mt-4'>Salad</h3>
                         </Link>
                         <Link to={"/Your-Order"}>
-                            <img src={imgCategory4} className='h-[150px]' />
+                            <img src={imgCategory4} className='h-[150px]' alt='img4' />
+                            <h3 className='font-semibold text-xl antialiased text-center mt-4'>Raita</h3>
                         </Link>
                         <Link to={"/Your-Order"}>
-                            <img src={imgCategory5} className='h-[150px]' />
+                            <img src={imgCategory5} className='h-[150px]' alt='img5' />
+                            <h3 className='font-semibold text-xl antialiased text-center mt-4'>Paneer</h3>
                         </Link>
 
 

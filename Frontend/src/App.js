@@ -7,9 +7,10 @@ import React from 'react';
 
 import AllRouter from './Router/AllRouter';
 import Footer from './components/Footer/Footer';
-import myanimation from "./Assets/Animation.gif"
 
 function App() {
+
+
 
   const [loading, setLoading] = React.useState("true")
 
@@ -34,6 +35,7 @@ function App() {
       <Navbar />
       <AllRouter />
       <Footer />
+
     </>
 
   )

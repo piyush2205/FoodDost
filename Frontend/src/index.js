@@ -8,6 +8,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { UserAuthContextProvider } from './components/UserAuthContext';
 import { CartProvider } from './components/Context/CartContext';
 import { Profiler } from 'react';
+import Snowfall from 'react-snowfall'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 function onRender(id, phase, actualDuration, baseDuration, startTime, commitTime) {
@@ -21,7 +22,11 @@ root.render(
       <CartProvider>
         <StrictMode>
           <Profiler id='App' onRender={onRender}>
-            <App />
+            <div style={{ position: 'relative' }}>
+              <Snowfall color='#ed4949' />
+              <App />
+            </div>,
+
           </Profiler>
         </StrictMode>
       </CartProvider>
@@ -29,4 +34,3 @@ root.render(
   </BrowserRouter >
 
 );
-

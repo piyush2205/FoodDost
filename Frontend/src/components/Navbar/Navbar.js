@@ -15,6 +15,7 @@ import _ from 'lodash';
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { IoCloseSharp } from "react-icons/io5";
 import { BsFillSearchHeartFill } from "react-icons/bs";
+import Marquee from "react-fast-marquee";
 
 // /**
 //  * CustomAlert component to display informational message with OTP.
@@ -530,9 +531,9 @@ function Navbar() {
                 isOpen={showPopup3}
             />
             <header className={`h-25 text-center w-full shadow-sm content-center items-center self-center  transition-colors duration-300 `} >
-                {/* <marquee behavior="scroll" direction="left" scrollamount="22" className='bg-[#fffb0028] text-center text-[#000000] text-xl'>
-                    📣 Welcome to FoodDost ,grab limited offer 1000Rs  📣
-                </marquee> */}
+                <Marquee gradient style={{ height: "30px", backgroundColor: "#ed4949" }} speed={40} direction="left" >
+                    <p className='text-white font-semibold'>Get 20% off on your first order. Use code: FIRST20</p>
+                </Marquee>
 
 
 
@@ -841,8 +842,3 @@ function Navbar() {
 }
 
 export default Navbar
-
-
-
-
-
